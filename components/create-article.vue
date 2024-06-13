@@ -17,9 +17,11 @@
                     <li>
                         <label for="date"></label>
                         <input 
-                            type="date" 
+                            :type="date" 
                             id="date" 
-                            name="date" 
+                            name="date"
+                            :placeholder="getDateStr"
+                            onfocus="(this.type='date')"
                             v-model="date">
                     </li>
                     <li>
@@ -43,21 +45,23 @@
     </div>
 </template>
 
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
 export default {
-    mounted() {
-        document.getElementById('date').value = new Date().toISOString().substring(0, 10);    },
     data() {
         return {
             title: '',
             date: '',
             content: '',
+            type: 'text',
         }
     },
     computed: {
         article() {
             return this.$store.state.articles.article;
+        },
+        getDateStr() {
+            let s = new Date().toLocaleDateString();
+            return s
         }
     },
     methods: {
@@ -67,11 +71,11 @@ export default {
                 date: this.date,
                 content: this.content,
             })
-                // .then(() => {
-                //     this.$router.push({
-                //         path: '/',
-                //     });
-                // });
+                .then(() => {
+                    this.$router.push({
+                        path: '/',
+                    });
+                });
         },
     },
 }
