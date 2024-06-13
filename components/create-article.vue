@@ -25,6 +25,7 @@
                     <li>
                         <textarea 
                             v-model="content"
+                            placeholder="게시글을 작성해 주세요."
                             required>
                         </textarea>
                     </li>
@@ -32,7 +33,7 @@
                         <input 
                             type="submit" 
                             id="submit-create"
-                            placeholder="글쓰기"
+                            value="글쓰기"
                             v-on:click="Post">
                     </li>
                 </ul>
@@ -42,9 +43,11 @@
     </div>
 </template>
 
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script>
-
 export default {
+    mounted() {
+        document.getElementById('date').value = new Date().toISOString().substring(0, 10);    },
     data() {
         return {
             title: '',
@@ -63,7 +66,12 @@ export default {
                 title: this.title,
                 date: this.date,
                 content: this.content,
-            });
+            })
+                // .then(() => {
+                //     this.$router.push({
+                //         path: '/',
+                //     });
+                // });
         },
     },
 }
