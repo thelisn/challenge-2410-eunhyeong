@@ -3,7 +3,6 @@
         <div class="inner">
             <ul>
                 <Article></Article>
-                <Article></Article>
             </ul>
         </div>
     </div>

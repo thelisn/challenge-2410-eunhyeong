@@ -1,32 +1,13 @@
 <template>
 
-    <!-- <li class="article">
-        <dl>
-            <dt>
-                <div class="article_title">
-                    titletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle
-                </div>
-                <div class="article_date">xxxx.xx.xx</div>
-            </dt>
-            <dd>
-                <div class="article_body">
-                    testtestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestest                                    testtestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestest
-                    testtestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestest
-                    testtestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestest
-                    esttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestesttesttestest
-                </div>
-            </dd>
-        </dl>
-    </li> -->
-
     <li class="article">
         <dl>
             <dt>
-                <div class="article_title"></div>
-                <div class="article_date"></div>
+                <div class="article_title">{{ article.title }}</div>
+                <div class="article_date">{{ article.date }}</div>
             </dt>
             <dd>
-                <div class="article_body"></div>
+                <div class="article_body">{{ article.content }}</div>
             </dd>
         </dl>
     </li>
@@ -36,7 +17,18 @@
 
 <script>
 export default {
-    
+    data() {
+        return {
+            title: '',
+            date: '',
+            content: '',
+        }
+    },
+    computed: {
+        article() {
+            return this.$store.state.articles.article;
+        }
+    },
 }
 </script>
 

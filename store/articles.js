@@ -1,9 +1,15 @@
 export const state = () => ({
-    name: 'articles',
+    article: [],
 });
 
 export const mutations = {
-    bye(state) {
-        state.name = 'test articles';
-    }
+    createArticle(state, payload) {
+        state.article = payload;
+    },
 };
+
+export const actions = {
+    createArticle( { commit }, payload) {
+        commit('createArticle', payload);
+    },
+}

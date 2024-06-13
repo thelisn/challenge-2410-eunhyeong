@@ -33,15 +33,10 @@
                             type="submit" 
                             id="submit-create"
                             placeholder="글쓰기"
-                            v-on:click="createArticle">
+                            v-on:click="Post">
                     </li>
                 </ul>
             </form>
-
-            <section>
-                <a v-on:click="onTest">test</a>
-                <p>{{ name }}</p>
-            </section>
 
         </div>
     </div>
@@ -58,17 +53,18 @@ export default {
         }
     },
     computed: {
-        name() {
-            return this.$store.state.articles.name;
+        article() {
+            return this.$store.state.articles.article;
         }
     },
     methods: {
-        createArticle: function() {
-            console.log(this.title, this.date, this.content);
+        Post: function() {
+            this.$store.dispatch('articles/createArticle', {
+                title: this.title,
+                date: this.date,
+                content: this.content,
+            });
         },
-        onTest() {
-            this.$store.commit('articles/bye');
-        }
     },
 }
 </script>
