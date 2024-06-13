@@ -38,11 +38,17 @@
                 </ul>
             </form>
 
+            <section>
+                <a v-on:click="onTest">test</a>
+                <p>{{ name }}</p>
+            </section>
+
         </div>
     </div>
 </template>
 
 <script>
+
 export default {
     data() {
         return {
@@ -51,12 +57,19 @@ export default {
             content: '',
         }
     },
+    computed: {
+        name() {
+            return this.$store.state.articles.name;
+        }
+    },
     methods: {
         createArticle: function() {
             console.log(this.title, this.date, this.content);
-            localStorage.setItem(this.title, this.date, this.content);
+        },
+        onTest() {
+            this.$store.commit('articles/bye');
         }
-    }
+    },
 }
 </script>
 
