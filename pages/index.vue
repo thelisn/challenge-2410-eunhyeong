@@ -33,6 +33,11 @@
     padding:0; 
     box-sizing: border-box;
     color: #3e3c3c;
+  }
+  html {
+    background-color: #FAF6F3;
+  }
+  .__nuxt-error-page {
     background-color: #FAF6F3;
   }
   .inner {
@@ -74,11 +79,15 @@
     width: 100%;
     resize: none;
   }
-  input[type="submit"] {
+  button {
     width: 100%;
     background-color: #3e3c3c;
     color: #F8F3F2;
     cursor: pointer;
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    height: 40px;
 }
 
   a[href="/create"] {

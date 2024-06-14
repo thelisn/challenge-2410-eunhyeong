@@ -5,9 +5,10 @@
                 <li class="article"
                     v-for="p in mainPosts"
                     :key="p.id">
+                    {{ p.number }}
                     <dl>
                         <dt>
-                            <div class="article_title">{{ p.title }}</div>
+                            <router-link :to="'article/'+p.id" class="article_title">{{ p.title }}</router-link>
                             <div class="article_date">{{ p.date | yyyyMMdd }}</div>
                         </dt>
                         <dd>
@@ -46,8 +47,8 @@ export default {
             }
 
             return year + '-' + month + '-' + day;
-	}
-}
+	    }
+    }
 }
 </script>
 
