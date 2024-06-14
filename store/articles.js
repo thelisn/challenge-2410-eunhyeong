@@ -1,15 +1,15 @@
 export const state = () => ({
-    article: [],
+    mainPosts: [],
 });
 
 export const mutations = {
-    createArticle(state, payload) {
-        state.article = payload;
+    addMainPost(state, payload) {
+        state.mainPosts.unshift(payload);
     },
 };
 
 export const actions = {
-    createArticle( { commit }, payload) {
-        commit('createArticle', payload);
+    add( { commit }, payload) {
+        commit('addMainPost', payload);
     },
 }

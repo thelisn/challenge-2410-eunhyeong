@@ -2,7 +2,7 @@
     <div id="create-article">
         <div class="inner">
 
-            <form ref="form">
+            <form ref="form" @submit.prevent="onSubmitForm">
                 <ul>
                     <li>
                         <label for="title"></label>
@@ -17,11 +17,9 @@
                     <li>
                         <label for="date"></label>
                         <input 
-                            :type="date" 
+                            type="date" 
                             id="date" 
                             name="date"
-                            :placeholder="getDateStr"
-                            onfocus="(this.type='date')"
                             v-model="date">
                     </li>
                     <li>
@@ -36,7 +34,7 @@
                             type="submit" 
                             id="submit-create"
                             value="글쓰기"
-                            v-on:click="Post">
+                            v-on:click="onSubmitForm">
                     </li>
                 </ul>
             </form>
@@ -52,31 +50,27 @@ export default {
             title: '',
             date: '',
             content: '',
-            type: 'text',
         }
     },
     computed: {
-        article() {
-            return this.$store.state.articles.article;
+        addMainPost() {
+            return this.$store.state.articles.mainPosts;
         },
-        getDateStr() {
-            let s = new Date().toLocaleDateString();
-            return s
-        }
     },
     methods: {
-        Post: function() {
-            this.$store.dispatch('articles/createArticle', {
+        onSubmitForm() {
+            this.$store.dispatch('articles/add', {
                 title: this.title,
                 date: this.date,
                 content: this.content,
+                id: Date.now(),
             })
-                .then(() => {
+            .then(() => {
                     this.$router.push({
                         path: '/',
                     });
                 });
-        },
+        }
     },
 }
 </script>
