@@ -2,7 +2,7 @@
     <div id="create-article">
         <div class="inner">
 
-            <form ref="form" @submit.prevent="onSubmitForm">
+            <form ref="form" @submit.prevent="false">
                 <ul>
                     <li>
                         <label for="title"></label>
@@ -13,14 +13,6 @@
                             placeholder="제목" 
                             v-model="title"
                             required>
-                    </li>
-                    <li>
-                        <label for="date"></label>
-                        <input 
-                            type="date" 
-                            id="date" 
-                            name="date"
-                            v-model="date">
                     </li>
                     <li>
                         <textarea 
@@ -61,13 +53,13 @@ export default {
         onSubmitForm() {
             this.$store.dispatch('articles/add', {
                 title: this.title,
-                date: this.date,
+                date: Date.now(),
                 content: this.content,
-                id: Date.now(),
             })
             .then(() => {
                     this.$router.push({
                         path: '/',
+                        redirect: '/',
                     });
                 });
         }

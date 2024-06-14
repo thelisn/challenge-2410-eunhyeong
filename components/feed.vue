@@ -8,7 +8,7 @@
                     <dl>
                         <dt>
                             <div class="article_title">{{ p.title }}</div>
-                            <div class="article_date">{{ p.date }}</div>
+                            <div class="article_date">{{ p.date | yyyyMMdd }}</div>
                         </dt>
                         <dd>
                             <div class="article_body">{{ p.content }}</div>
@@ -26,7 +26,28 @@ export default {
         mainPosts() {
             return this.$store.state.articles.mainPosts;
         }
-    }
+    },
+    filters : {  
+	    yyyyMMdd : function(value){ 
+            if(value == '') return '';
+
+            var js_date = new Date(value);
+
+            var year = js_date.getFullYear();
+            var month = js_date.getMonth() + 1;
+            var day = js_date.getDate();
+
+            if(month < 10){
+                month = '0' + month;
+            }
+
+            if(day < 10){
+                day = '0' + day;
+            }
+
+            return year + '-' + month + '-' + day;
+	}
+}
 }
 </script>
 
