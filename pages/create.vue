@@ -25,8 +25,7 @@
                   </textarea>
                 </li>
                 <li>
-                  <button
-                    id="submit-create" v-on:click="onSubmitForm">글쓰기</button>
+                  <button id="submit-create" v-on:click="onSubmitForm">글쓰기</button>
                 </li>
             </ul>
         </div>
@@ -95,19 +94,19 @@
   }
 
   #create-article {
-        padding-top: 46px;
-    }
-    #create-article .inner {
-        padding: 8px 0;
-    }
+    padding-top: 46px;
+  }
+  #create-article .inner {
+      padding: 8px 0;
+  }
 
-    #create-article ul li:not(:first-child) {
-        margin-top: 8px;
-    }
-    #create-article input {
-        width: 100%;
-    }
-    #create-article textarea {
-        height: 48vh;
-    }
+  #create-article ul li:not(:first-child) {
+    margin-top: 8px;
+  }
+  #create-article input {
+    width: 100%;
+  }
+  #create-article textarea {
+    height: 48vh;
+  }
 </style>
