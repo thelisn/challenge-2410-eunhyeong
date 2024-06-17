@@ -35,36 +35,35 @@
 </template>
   
 <script>    
-    export default {
-      name: 'Create',
-      data() {
-        return {
-            title: '',
-            content: '',
-        }
+  export default {
+    name: 'Create',
+    data() {
+      return {
+        title: '',
+        content: '',
+      }
+    },
+    computed: {
+      addMainPost() {
+        return this.$store.state.posts.mainPosts;
       },
-      computed: {
-        addMainPost() {
-            return this.$store.state.articles.mainPosts;
-        },
-        mainPosts() {
-            return this.$store.state.articles.mainPosts;
-        },
+      mainPosts() {
+        return this.$store.state.posts.mainPosts;
       },
+    },
 
-      methods: {
-        onSubmitForm() {
-          this.$store.dispatch('articles/add', {
-                title: this.title,
-                date: Date.now(),
-                content: this.content,
-                id: this.mainPosts.length +1,
-            })
-          this.$router.push({path: '/'})
-        }
-      },
-    }
-    
+    methods: {
+      onSubmitForm() {
+        this.$store.dispatch('posts/add', {
+          title: this.title,
+          date: Date.now(),
+          content: this.content,
+          id: this.mainPosts.length +1,
+        })
+        this.$router.push({path: '/'})
+      }
+    },
+  }
 </script>
   
 <style>
