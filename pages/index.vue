@@ -3,9 +3,11 @@
     
     <Header></Header>
     <Search></Search>
-    <Feed></Feed>
 
-    <router-link to="/create">글쓰기</router-link>
+    <FeedFilter v-if="isSearched===true"></FeedFilter>
+    <Feed v-else></Feed>
+
+    <router-link to="/create" class="btn-create">글쓰기</router-link>
 
   </div>
 </template>
@@ -14,16 +16,21 @@
   import Header from '../components/header.vue'
   import Search from '../components/search.vue'
   import Feed from '../components/feed.vue'
-  import Create from './create.vue'
+  import FeedFilter from '../components/feed-filter.vue'
 
   export default {
     name: 'IndexPage',
     components: {
-        'Header': Header,
-        'Search': Search,
-        'Feed': Feed,
-        'Create': Create,
-    }
+      'Header': Header,
+      'Search': Search,
+      'Feed': Feed,
+      'FeedFilter': FeedFilter,
+    },
+    computed: {
+      isSearched() {
+        return this.$store.state.posts.searchedPosts.searched;
+      }
+    },
   }
 </script>
 
@@ -33,6 +40,11 @@
     padding:0; 
     box-sizing: border-box;
     color: #3e3c3c;
+  }
+  html {
+    background-color: #FAF6F3;
+  }
+  .__nuxt-error-page {
     background-color: #FAF6F3;
   }
   .inner {
@@ -53,6 +65,7 @@
     background-color: #3c16cbb8;
     color: #fff;
   }
+  
   input {
     border: none;
     background-color: #EEE8E3;
@@ -74,14 +87,18 @@
     width: 100%;
     resize: none;
   }
-  input[type="submit"] {
+  button {
     width: 100%;
     background-color: #3e3c3c;
     color: #F8F3F2;
     cursor: pointer;
+    outline: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    height: 40px;
 }
 
-  a[href="/create"] {
+  .btn-create {
     position: fixed;
     bottom: 5vw;
     right: 5vw;

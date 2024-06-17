@@ -2,7 +2,7 @@
 
 
 ## Requirements
-vue3 + axios + nuxt
+vue2 +  nuxt
 
 ## Project Setup
 

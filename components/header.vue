@@ -1,9 +1,9 @@
 <template>
     <div id="header">
         <div class="inner">
-            <div class="logo">
+            <router-link to="/" class="logo">
                 <img src="../static/img/logo-black.png">
-            </div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -18,6 +18,7 @@ export default {
 #header .logo {
     padding: 16vh 0 8vh;
     text-align: center;
+    display: block;
 }
 #header .logo img {
     height: 8vh;
