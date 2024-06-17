@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style>
-.article_list {
+#feed {
     margin: 8vh 0;
 }
 .article_list li:not(:first-child) {

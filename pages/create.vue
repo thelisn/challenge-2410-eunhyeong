@@ -41,6 +41,7 @@
       return {
         title: '',
         content: '',
+        id: '',
       }
     },
     computed: {
@@ -51,7 +52,6 @@
         return this.$store.state.posts.mainPosts;
       },
     },
-
     methods: {
       onSubmitForm() {
         this.$store.dispatch('posts/add', {
@@ -60,7 +60,7 @@
           content: this.content,
           id: this.mainPosts.length +1,
         })
-        this.$router.push({path: '/'})
+        this.$router.push({path: 'post/'+ this.mainPosts.length})
       }
     },
   }

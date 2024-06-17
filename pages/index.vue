@@ -3,9 +3,11 @@
     
     <Header></Header>
     <Search></Search>
-    <Feed></Feed>
 
-    <router-link to="/create">글쓰기</router-link>
+    <FeedFilter v-if="isSearched===true"></FeedFilter>
+    <Feed v-else></Feed>
+
+    <router-link to="/create" class="btn-create">글쓰기</router-link>
 
   </div>
 </template>
@@ -14,16 +16,21 @@
   import Header from '../components/header.vue'
   import Search from '../components/search.vue'
   import Feed from '../components/feed.vue'
-  import Create from './create.vue'
+  import FeedFilter from '../components/feed-filter.vue'
 
   export default {
     name: 'IndexPage',
     components: {
-        'Header': Header,
-        'Search': Search,
-        'Feed': Feed,
-        'Create': Create,
-    }
+      'Header': Header,
+      'Search': Search,
+      'Feed': Feed,
+      'FeedFilter': FeedFilter,
+    },
+    computed: {
+      isSearched() {
+        return this.$store.state.posts.searchedPosts.searched;
+      }
+    },
   }
 </script>
 
@@ -58,6 +65,7 @@
     background-color: #3c16cbb8;
     color: #fff;
   }
+  
   input {
     border: none;
     background-color: #EEE8E3;
@@ -90,7 +98,7 @@
     height: 40px;
 }
 
-  a[href="/create"] {
+  .btn-create {
     position: fixed;
     bottom: 5vw;
     right: 5vw;
