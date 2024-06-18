@@ -16,12 +16,20 @@
                     <dl>
                         <dd>
                             <span>
-                                <label for="date1"></label>
-                                <input type="date" id="date1">
+                                <label for="startDate"></label>
+                                <input 
+                                    type="date" 
+                                    id="startDate"
+                                    v-model="startDate"
+                                >
                             </span>
                             <span>
-                                <label for="date2"></label>
-                                <input type="date" id="date2">
+                                <label for="endDate"></label>
+                                <input 
+                                    type="date" 
+                                    id="startDate"
+                                    v-model="endDate"
+                                >
                             </span>
                             
                         </dd>
@@ -32,6 +40,7 @@
                 </li>
             </ul>
 
+
         </div>
     </div>
     
@@ -41,21 +50,22 @@
     export default {
         data() {
             return {
-                searchKey: '',
                 searched: false,
+                searchKey: '',
+                startDate: '',
+                endDate: '',
             }
         },
         methods: {
-            searchByKey() {
-                
-            },
             onSearch(keyword) {
-                if (this.searchKey == '') { 
-                    alert('검색어를 입력해주세요.');
+                if (this.searchKey.trim() === '') { 
+                    console.log('검색어를 입력해주세요.');
                 } else {
                     this.$store.dispatch('posts/search', {
-                        searchKey: this.searchKey,
                         searched: true,
+                        searchKey: this.searchKey,
+                        startDate: this.startDate,
+                        endDate: this.endDate
                     });
                 }
             }

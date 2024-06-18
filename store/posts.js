@@ -1,6 +1,6 @@
 export const state = () => ({
-    mainPosts: [],
-    searchedPosts: []
+    mainPosts: [ { "title": "x", "date": 1718683360028, "content": "x", "id": 2 }, { "title": "a", "date": 1718683357756, "content": "a", "id": 1 } ],
+    isSearched: []
 });
 
 export const mutations = {
@@ -8,12 +8,7 @@ export const mutations = {
         state.mainPosts.unshift(payload);
     },
     searchPost(state, payload) {
-
-        const searchedKey = payload.searchKey;
-        console.log(searchedKey);
-
-        state.searchedPosts = payload;
-
+        state.isSearched = payload;
     }
 };
 

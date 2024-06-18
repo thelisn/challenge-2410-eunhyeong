@@ -28,7 +28,7 @@
     },
     computed: {
       isSearched() {
-        return this.$store.state.posts.searchedPosts.searched;
+        return this.$store.state.posts.isSearched.searched;
       }
     },
   }
