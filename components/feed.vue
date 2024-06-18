@@ -27,40 +27,11 @@ export default {
 }
 </script>
 
-<style>
-.article_list {
-    margin: 8vh 0;
-}
-.article_list li:not(:first-child) {
-    margin-top: 32px;
-}
-
-.article dt {
-    display: grid;
-    grid-template-columns: 2fr auto;
-    gap: 16px;
-}
-.article .article_title {    
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    display: -webkit-box;
-    font-size: 24px;
-    font-weight: bold;
-}
-.article .article_date {
-    text-align: right;
-    display: flex;
-    align-items: center;
-    color: #bcb8b8;
-    font-size: 14px;
-}
-.article .article_body {
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    display: -webkit-box;
-    margin-top: 8px;
-    font-size: 16px;
-}
+<style scoped>
+    .article_list {
+        margin: 8vh 0;
+    }
+    .article_list li:not(:first-child) {
+        margin-top: 32px;
+    }
 </style>

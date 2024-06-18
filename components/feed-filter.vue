@@ -11,22 +11,22 @@
 <script>
 export default {
     computed: {
-      allPosts() {
-        return this.$store.state.posts.mainPosts;
-      },
-      searchKeyword() {
-        return this.$store.state.posts.isSearched.searchKey;
-      },
-      searchedPosts() {
-        return this.allPosts.filter(post => {
-            return post.title.toLowerCase().includes(this.searchKeyword.toLowerCase()) > 0;
-        });
-      }
+        allPosts() {
+            return this.$store.state.posts.mainPosts;
+        },
+        searchKeyword() {
+            return this.$store.state.posts.isSearched.searchKey;
+        },
+        searchedPosts() {
+            return this.allPosts.filter(post => {
+                return post.title.toLowerCase().includes(this.searchKeyword.toLowerCase()) > 0;
+            });
+        }
     },
 }
 </script>
 
-<style>
+<style scoped>
 #feed-filter {
     margin: 8vh 0;
 }

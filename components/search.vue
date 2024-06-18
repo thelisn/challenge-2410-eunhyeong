@@ -13,8 +13,8 @@
                         placeholder="검색어를 입력하세요">
                 </li>
                 <li>
-                    <dl>
-                        <dd>
+                    <ul>
+                        <li>
                             <span>
                                 <label for="startDate"></label>
                                 <input 
@@ -32,11 +32,11 @@
                                 >
                             </span>
                             
-                        </dd>
-                        <dt>
+                        </li>
+                        <li>
                             <button id="submit-search" v-on:click="onSearch">검색</button>                        
-                        </dt>
-                    </dl>
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
@@ -74,15 +74,15 @@
 </script>
 
 <style>
-    .search-form li:not(:first-child) {
+    .search-form > li:not(:first-child) {
         margin-top: 8px;
     }
-    .search-form li dl {
+    .search-form li ul {
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-gap: 8px;
     }
-    .search-form li dl dd {
+    .search-form li ul li:first-child {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 8px;
