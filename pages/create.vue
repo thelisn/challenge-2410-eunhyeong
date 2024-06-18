@@ -1,7 +1,11 @@
 <template>
     <div id="create">
       
-        <router-link to="/" class="btn-back">뒤로</router-link>
+        <button
+            class="btn-back" 
+            @click="clickBack">
+                뒤로
+        </button>
         <Header></Header>
 
         <div id="create-article">
@@ -51,7 +55,6 @@
                 return this.$store.state.posts.mainPosts;
             },
         },
-
         methods: {
             onSubmitForm() {
                 this.$store.dispatch('posts/add', {
@@ -61,7 +64,14 @@
                     id: this.mainPosts.length +1,
                 })
                 this.$router.push({path: '/post/' + this.mainPosts.length})
-            }
+            },
+            clickBack() {
+                this.$store.dispatch('posts/search', {
+                    searched: false,
+                    searchKey: '',
+                });
+                this.$router.push({path: '/'})
+            },
         },
     }
 </script>

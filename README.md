@@ -18,3 +18,8 @@ npm run serve
 
 
 ## 설명
+home - 검색, 포스트 피드
+
+create - 포스트 글 입력 화면
+
+post/글번호 - 개별 포스트 상세 화면

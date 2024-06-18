@@ -1,7 +1,11 @@
 <template>
     <div id="article_page">
 
-        <router-link to="/" class="btn-back">뒤로</router-link>
+        <button
+            class="btn-back" 
+            @click="clickBack">
+                뒤로
+        </button>
         <Header></Header>
 
         <div class="inner">
@@ -30,6 +34,15 @@
                 return this.$store.state.posts.mainPosts.find(v => v.id === parseInt(this.$route.params.id, 10));
             },
         },
+        methods: {
+            clickBack() {
+                this.$store.dispatch('posts/search', {
+                    searched: false,
+                    searchKey: '',
+                });
+                this.$router.push({path: '/'})
+            },
+        }
     }
 </script>
 
@@ -50,6 +63,11 @@
         margin-top: 46px;
         padding: 8px 0 8vh;
     }
+    #article_page .article_title {
+        pointer-events: none;
+        cursor: default;
+    }
+
     #article_page .article_error {
         text-align: center;
         margin-top: 46px;

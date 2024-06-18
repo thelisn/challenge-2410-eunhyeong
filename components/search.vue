@@ -10,6 +10,7 @@
                         id="searchKey" 
                         name="searchKey" 
                         v-model="searchKey"
+                        v-on:keyup.enter="onSearch"
                         placeholder="검색어를 입력하세요">
                 </li>
                 <li>
@@ -58,16 +59,12 @@
         },
         methods: {
             onSearch(keyword) {
-                if (this.searchKey.trim() === '') { 
-                    console.log('검색어를 입력해주세요.');
-                } else {
-                    this.$store.dispatch('posts/search', {
+                this.$store.dispatch('posts/search', {
                         searched: true,
                         searchKey: this.searchKey,
                         date1: this.date1,
                         date2: this.date2
                     });
-                }
             }
         },
     }
@@ -86,5 +83,17 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-gap: 8px;
+    }
+    
+    .search-form input[type="date"] {
+        width: 100%;
+        cursor: pointer;
+    }
+    .search-form button {
+        min-width: 56px;
+    }
+    .search-form button:hover {
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s;
     }
 </style>
