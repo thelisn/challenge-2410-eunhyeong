@@ -1,5 +1,5 @@
 export const state = () => ({
-    mainPosts: [ { "title": "x", "date": 1718683360028, "content": "x", "id": 2 }, { "title": "a", "date": 1718683357756, "content": "a", "id": 1 } ],
+    mainPosts: [ { "title": "x", "date": 1618683360028, "content": "x", "id": 2 }, { "title": "a", "date": 1718683357756, "content": "a", "id": 1 } ],
     isSearched: []
 });
 
@@ -9,6 +9,8 @@ export const mutations = {
     },
     searchPost(state, payload) {
         state.isSearched = payload;
+
+        console.log(payload);
     }
 };
 

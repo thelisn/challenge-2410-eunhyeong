@@ -8,7 +8,7 @@
             <div v-if="post" class="article_wrap">
                 <Post :post="post"></Post>
             </div>
-            <div v-else>
+            <div v-else class="article_error">
                 해당 아이디의 게시글이 존재하지 않습니다. 
             </div>
         </div>
@@ -17,8 +17,8 @@
 </template>
 
 <script>
-    import Header from '../../components/header.vue'
-    import Post from '../../components/post.vue'
+    import Header from '@/components/header.vue'
+    import Post from '@/components/post.vue'
 
     export default {
         components: {
@@ -49,5 +49,13 @@
     #article_page .article_wrap {
         margin-top: 46px;
         padding: 8px 0 8vh;
+    }
+    #article_page .article_error {
+        text-align: center;
+        margin-top: 46px;
+        display: flex;
+        height: calc(100vh - 48px);
+        align-items: center;
+        justify-content: center;
     }
 </style>

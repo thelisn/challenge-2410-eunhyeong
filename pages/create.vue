@@ -6,26 +6,26 @@
 
         <div id="create-article">
             <div class="inner">
-            <ul>
-                <li>
-                <label for="title"></label>
-                    <input 
-                    type="text" 
-                    id="title" 
-                    name="title" 
-                    placeholder="제목" 
-                    v-model="title"
-                    required>
+                <ul>
+                    <li>
+                        <label for="title"></label>
+                        <input 
+                            type="text" 
+                            id="title" 
+                            name="title" 
+                            placeholder="제목" 
+                            v-model="title"
+                            required>
                     </li>
                     <li>
-                    <textarea 
-                        v-model="content"
-                        placeholder="게시글을 작성해 주세요."
-                        required>
-                    </textarea>
+                        <textarea 
+                            v-model="content"
+                            placeholder="게시글을 작성해 주세요."
+                            required>
+                        </textarea>
                     </li>
                     <li>
-                    <button id="submit-create" v-on:click="onSubmitForm">글쓰기</button>
+                        <button id="submit-create" v-on:click="onSubmitForm">글쓰기</button>
                     </li>
                 </ul>
             </div>
@@ -55,12 +55,12 @@
         methods: {
             onSubmitForm() {
                 this.$store.dispatch('posts/add', {
-                title: this.title,
-                date: Date.now(),
-                content: this.content,
-                id: this.mainPosts.length +1,
+                    title: this.title,
+                    date: Date.now(),
+                    content: this.content,
+                    id: this.mainPosts.length +1,
                 })
-                this.$router.push({path: '/'})
+                this.$router.push({path: '/post/' + this.mainPosts.length})
             }
         },
     }
@@ -77,19 +77,6 @@
     }
     #create #header .logo img {
         height: 24px;
-    }
-
-    .btn-back {
-        text-indent: -9999px;
-        width: 24px;
-        height: 24px;
-        display: block;
-        position: fixed;
-        top: 12px;
-        left: 5vw;
-        z-index: 1;
-        background: url('../static/img/btn-back.png') no-repeat 50% 50%;
-        background-size: cover;
     }
 </style>
 

@@ -13,10 +13,10 @@
 </template>
 
 <script>
-    import Header from '../components/header.vue'
-    import Search from '../components/search.vue'
-    import Feed from '../components/feed.vue'
-    import FeedFilter from '../components/feed-filter.vue'
+    import Header from '@/components/header.vue'
+    import Search from '@/components/search.vue'
+    import Feed from '@/components/feed.vue'
+    import FeedFilter from '@/components/feed-filter.vue'
 
     export default {
         name: 'IndexPage',
@@ -113,5 +113,17 @@
         font-size: 0.8rem;
         padding: 0.4rem;
         box-shadow: 0 8px 8px rgba(0, 0, 0, 0.12);
+    }
+    .btn-back {
+        text-indent: -9999px;
+        width: 24px;
+        height: 24px;
+        display: block;
+        position: fixed;
+        top: 12px;
+        left: 5vw;
+        z-index: 1;
+        background: url('@/static/img/btn-back.png') no-repeat 50% 50%;
+        background-size: cover;
     }
 </style>

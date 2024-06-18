@@ -16,19 +16,19 @@
                     <ul>
                         <li>
                             <span>
-                                <label for="startDate"></label>
+                                <label for="date1"></label>
                                 <input 
                                     type="date" 
-                                    id="startDate"
-                                    v-model="startDate"
+                                    id="date1"
+                                    v-model="date1"
                                 >
                             </span>
                             <span>
-                                <label for="endDate"></label>
+                                <label for="date2"></label>
                                 <input 
                                     type="date" 
-                                    id="startDate"
-                                    v-model="endDate"
+                                    id="date2"
+                                    v-model="date2"
                                 >
                             </span>
                             
@@ -52,8 +52,8 @@
             return {
                 searched: false,
                 searchKey: '',
-                startDate: '',
-                endDate: '',
+                date1: '',
+                date2: '',
             }
         },
         methods: {
@@ -64,8 +64,8 @@
                     this.$store.dispatch('posts/search', {
                         searched: true,
                         searchKey: this.searchKey,
-                        startDate: this.startDate,
-                        endDate: this.endDate
+                        date1: this.date1,
+                        date2: this.date2
                     });
                 }
             }
