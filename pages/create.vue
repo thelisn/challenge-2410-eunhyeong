@@ -12,7 +12,7 @@
             <div class="inner">
                 <ul>
                     <li>
-                        <label for="title"></label>
+                        <label for="title">제목</label>
                         <input 
                             type="text" 
                             id="title" 
@@ -20,6 +20,14 @@
                             placeholder="제목" 
                             v-model="title"
                             required>
+                    </li>
+                    <li>
+                        <label for="date">날짜</label>
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            v-model="date">
                     </li>
                     <li>
                         <textarea 
@@ -44,22 +52,27 @@
         data() {
             return {
                 title: '',
+                date: '',
                 content: '',
             }
         },
         computed: {
-            addMainPost() {
-                return this.$store.state.posts.mainPosts;
-            },
             mainPosts() {
                 return this.$store.state.posts.mainPosts;
             },
+            dateSelected() {
+                if (this.date == '') {
+                    return Date.now();
+                } else {
+                    return this.date;
+                }
+            }
         },
         methods: {
             onSubmitForm() {
                 this.$store.dispatch('posts/add', {
                     title: this.title,
-                    date: Date.now(),
+                    date: this.dateSelected,
                     content: this.content,
                     id: this.mainPosts.length +1,
                 })
@@ -75,20 +88,6 @@
         },
     }
 </script>
-  
-<style>
-    #create #header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }
-    #create #header .logo {
-        padding: 8px 0;
-    }
-    #create #header .logo img {
-        height: 24px;
-    }
-</style>
 
 <style scoped>
     #create-article {

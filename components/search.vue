@@ -4,7 +4,7 @@
 
             <ul class="search-form">
                 <li>
-                    <label for="searchKey"></label>
+                    <label for="searchKey">검색어</label>
                     <input 
                         type="search" 
                         id="searchKey" 
@@ -17,7 +17,7 @@
                     <ul>
                         <li>
                             <span>
-                                <label for="date1"></label>
+                                <label for="date1">시작 날짜</label>
                                 <input 
                                     type="date" 
                                     id="date1"
@@ -25,7 +25,7 @@
                                 >
                             </span>
                             <span>
-                                <label for="date2"></label>
+                                <label for="date2">종료 날짜</label>
                                 <input 
                                     type="date" 
                                     id="date2"
@@ -71,29 +71,4 @@
 </script>
 
 <style>
-    .search-form > li:not(:first-child) {
-        margin-top: 8px;
-    }
-    .search-form li ul {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        grid-gap: 8px;
-    }
-    .search-form li ul li:first-child {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 8px;
-    }
-    
-    .search-form input[type="date"] {
-        width: 100%;
-        cursor: pointer;
-    }
-    .search-form button {
-        min-width: 56px;
-    }
-    .search-form button:hover {
-        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
-        transition: all 0.4s;
-    }
 </style>

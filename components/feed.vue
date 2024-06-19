@@ -2,8 +2,9 @@
     <div id="feed">
         <div class="inner">
 
-            <!--- 검색 결과 --->
-            <div v-if="isSearched===true" class="feed_filtered">
+            <!-- 검색 결과 --->
+            <div class="feed_filtered"
+                v-if="isSearched===true">
                 <p>총 <b>{{ searchedPosts.length }}</b>개의 글이 검색되었습니다.</p>
                 <ul class="article_list">
                     <Post
@@ -14,8 +15,9 @@
                 </ul>
             </div>
 
-            <!--- 모든 포스트 --->
-            <div v-else class="feed_all">
+            <!-- 모든 포스트 --->
+            <div 
+                v-else class="feed_all">
                 <ul class="article_list">
                     <Post
                         v-for="p in mainPosts"

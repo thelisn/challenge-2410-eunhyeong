@@ -44,16 +44,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     #feed .article .title_wrap {
         display: grid;
         grid-template-columns: 2fr auto;
         gap: 16px;
-    }
-    .article .article_title {
-        font-size: 24px;
-        font-weight: bold;
-        word-break: break-all;
     }
     #feed .article .article_title {    
         -webkit-line-clamp: 1;
@@ -61,21 +56,8 @@ export default {
         overflow: hidden;
         display: -webkit-box;
     }
-    .article .article_date {
-        color: #bcb8b8;
-        font-size: 14px;
-        text-align: right;
-    }
     #feed .article .article_date {
         display: flex;
         align-items: center;
-    }
-    .article .article_body {
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        display: -webkit-box;
-        margin-top: 8px;
-        font-size: 16px;
     }
 </style>

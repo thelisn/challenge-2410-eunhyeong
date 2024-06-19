@@ -21,7 +21,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     #header .logo {
         padding: 16vh 0 8vh;
         text-align: center;

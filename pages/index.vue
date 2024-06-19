@@ -31,7 +31,7 @@
 </script>
 
 <style>
-    *{
+    * {
         margin:0; 
         padding:0; 
         box-sizing: border-box;
@@ -48,6 +48,7 @@
         width: 100%;
         margin: auto;
     }
+
     li { 
         list-style-type: none; 
     }
@@ -63,6 +64,7 @@
         color: #fff;
     }
     
+    /* input */
     input {
         border: none;
         background-color: #EEE8E3 !important;
@@ -76,6 +78,12 @@
     input:-webkit-autofill:focus, 
     input:-webkit-autofill:active{
         -webkit-box-shadow: 0 0 0 30px #EEE8E3 inset !important;
+    }
+    label {
+        text-indent: -999999px;
+        width: 0px;
+        height: 0px;
+        display: none;
     }
 
     input[type="search"] {
@@ -102,6 +110,34 @@
         height: 40px;
     }
 
+    /* form */
+    .search-form > li:not(:first-child) {
+        margin-top: 8px;
+    }
+    .search-form li ul {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 8px;
+    }
+    .search-form li ul li:first-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8px;
+    }
+    
+    .search-form input[type="date"] {
+        width: 100%;
+        cursor: pointer;
+    }
+    .search-form button {
+        min-width: 56px;
+    }
+    .search-form button:hover {
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.4s;
+    }
+
+    /* button */
     .btn-create {
         position: fixed;
         bottom: 5vw;
@@ -133,6 +169,38 @@
         outline: none;
     }
 
+    /* create */
+    #create #header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    #create #header .logo {
+        padding: 8px 0;
+    }
+    #create #header .logo img {
+        height: 24px;
+    }
+
+    /* posts */
+    .article .article_title {
+        font-size: 24px;
+        font-weight: bold;
+        word-break: break-all;
+    }
+    .article .article_date {
+        color: #bcb8b8;
+        font-size: 14px;
+        text-align: right;
+    }
+    .article .article_body {
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+        margin-top: 8px;
+        font-size: 16px;
+    }
 
     /* RESPONSIVE */
     @media all and (max-width: 425px) {
