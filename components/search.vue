@@ -41,7 +41,6 @@
                 </li>
             </ul>
 
-
         </div>
     </div>
     
@@ -70,5 +69,6 @@
     }
 </script>
 
-<style>
+<style scoped>
+
 </style>

@@ -89,21 +89,24 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
     #create-article {
         padding-top: 46px;
-    }
-    #create-article .inner {
-        padding: 8px 0;
-    }
 
-    #create-article ul li:not(:first-child) {
-        margin-top: 8px;
-    }
-    #create-article input {
-        width: 100%;
-    }
-    #create-article textarea {
-        height: 48vh;
+        & .inner {
+            padding: 8px 0;
+        }
+
+        & ul li:not(:first-child) {
+            margin-top: 8px;
+        }
+
+        & input {
+            width: 100%;
+        }
+
+        & textarea {
+            height: calc(100vh - 212px);
+        }
     }
 </style>

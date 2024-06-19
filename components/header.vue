@@ -22,12 +22,5 @@
 </script>
 
 <style scoped>
-    #header .logo {
-        padding: 16vh 0 8vh;
-        text-align: center;
-        display: block;
-    }
-    #header .logo img {
-        height: 8vh;
-    }
+
 </style>

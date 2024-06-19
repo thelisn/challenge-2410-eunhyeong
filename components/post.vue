@@ -22,7 +22,7 @@ export default {
     },
     filters : {  
 	    yyyyMMdd : function(value){ 
-            if(value == '') return '';
+            if (value == '') return '';
 
             var js_date = new Date(value);
 
@@ -30,11 +30,11 @@ export default {
             var month = js_date.getMonth() + 1;
             var day = js_date.getDate();
 
-            if(month < 10){
+            if (month < 10) {
                 month = '0' + month;
             }
 
-            if(day < 10){
+            if (day < 10) {
                 day = '0' + day;
             }
 
@@ -44,20 +44,24 @@ export default {
 }
 </script>
 
-<style scoped>
-    #feed .article .title_wrap {
-        display: grid;
-        grid-template-columns: 2fr auto;
-        gap: 16px;
-    }
-    #feed .article .article_title {    
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        display: -webkit-box;
-    }
-    #feed .article .article_date {
-        display: flex;
-        align-items: center;
+<style scoped lang="scss">
+    #feed .article {
+        & .title_wrap {
+            display: grid;
+            grid-template-columns: 2fr auto;
+            grid-gap: 16px;       
+        }
+
+        & .article_title {
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            display: -webkit-box;
+        }
+
+        & .article_date {
+            display: flex;
+            align-items: center;
+        }
     }
 </style>

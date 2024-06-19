@@ -106,16 +106,10 @@ export default {
 </script>
 
 <style scoped>
-    #feed {
-        margin: 8vh 0;
-    }
     .article_list li:not(:first-child) {
         margin-top: 32px;
     }
-
     .feed_filtered p {
         text-align: center;
-        margin-bottom: 8vh;
-        font-size: 14px;
     }
 </style>

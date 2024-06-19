@@ -46,34 +46,6 @@
     }
 </script>
 
-<style>
-    #article_page #header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-    }
-    #article_page #header .logo {
-        padding: 8px 0;
-    }
-    #article_page #header .logo img {
-        height: 24px;
-    }
-
-    #article_page .article_wrap {
-        margin-top: 46px;
-        padding: 8px 0 8vh;
-    }
-    #article_page .article_title {
-        pointer-events: none;
-        cursor: default;
-    }
-
-    #article_page .article_error {
-        text-align: center;
-        margin-top: 46px;
-        display: flex;
-        height: calc(100vh - 48px);
-        align-items: center;
-        justify-content: center;
-    }
+<style lang="scss">
+    @import '@/static/scss/post_detail.scss';
 </style>
