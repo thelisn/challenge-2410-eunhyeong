@@ -3,25 +3,25 @@
         margin-top: $gap;
     }
 
-    & li ul {
+    li ul {
         display: grid;
         grid-template-columns: 3fr 1fr;
         grid-gap: $gap;
 
-        & li:first-child {
+        li:first-child {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-gap: $gap;
         }
     }
 
-    & input[type="date"] {
+    input[type="date"] {
         width: 100%;
         max-width: 160px;
         cursor: pointer;  
     }
 
-    & button {
+    button {
         min-width: 56px;
         transition: all 0.4s;
 
@@ -35,16 +35,16 @@
 /* ----- RESPONSIVE ----- */
 @media all and (max-width: 425px) {
     .search-form {
-        & li ul {
+        li ul {
             grid-template-columns: 1fr;
 
-            & li:first-child span {
+            li:first-child span {
                 display: block !important;
                 width: calc(50vw - 20px);
             }
         }
 
-        & input[type="date"] {
+        input[type="date"] {
             max-width: initial;
         }
     }

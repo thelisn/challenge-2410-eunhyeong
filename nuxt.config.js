@@ -16,7 +16,7 @@ export default {
   },
 
   css: [
-    '@/assets/main.scss'
+    '@/assets/scss/main.scss'
   ],
 
   plugins: [
