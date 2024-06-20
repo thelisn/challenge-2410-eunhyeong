@@ -58,6 +58,9 @@ export default {
             overflow: hidden;
             display: -webkit-box;
         }
+        .article_title:hover {
+            text-decoration: underline;
+        }
 
         .article_date {
             display: flex;

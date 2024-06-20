@@ -1,10 +1,10 @@
 #header {
-    & .logo {
+    .logo {
         padding: $m-page*2 0 $m-page;
         text-align: center;
         display: block;
 
-        & img {
+        img {
             height: $m-page;
         }
     }

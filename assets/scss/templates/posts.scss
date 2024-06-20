@@ -1,17 +1,17 @@
 .article {
-    & .article_title {
+    .article_title {
         font-size: $font-size-l;
         font-weight: bold;
         word-break: break-all;
     }
 
-    & .article_date {
-        color: #bcb8b8;
+    .article_date {
+        color: $color-gray;
         font-size: $font-size-s;
         text-align: right;
     }
 
-    & .article_body {
+    .article_body {
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;

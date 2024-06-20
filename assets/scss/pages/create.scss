@@ -1,10 +1,10 @@
 #create {
-    & #header {
+    #header {
         position: fixed;
         top: 0;
         width: 100%;
 
-        & .logo {
+        .logo {
             padding: 8px 0;
 
             & img {
