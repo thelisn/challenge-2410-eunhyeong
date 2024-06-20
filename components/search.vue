@@ -21,16 +21,14 @@
                                 <input 
                                     type="date" 
                                     id="date1"
-                                    v-model="date1"
-                                >
+                                    v-model="date1">
                             </span>
                             <span>
                                 <label for="date2">종료 날짜</label>
                                 <input 
                                     type="date" 
                                     id="date2"
-                                    v-model="date2"
-                                >
+                                    v-model="date2">
                             </span>
                             
                         </li>

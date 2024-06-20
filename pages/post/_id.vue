@@ -47,5 +47,5 @@
 </script>
 
 <style lang="scss">
-    @import '@/static/scss/post_detail.scss';
+
 </style>

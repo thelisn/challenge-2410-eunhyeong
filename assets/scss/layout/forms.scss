@@ -1,0 +1,46 @@
+input {
+    border: none;
+    background-color: $input-color !important;
+    outline: none;
+    padding: $input-padding;
+    border-radius: $border-radius;
+    height: $input-height;
+    font-size: $font-size-m;
+
+    &:-webkit-autofill,
+    :-webkit-autofill:hover, 
+    :-webkit-autofill:focus, 
+    :-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px $input-color inset !important;
+    }
+
+    &[type="search"] {
+        width: 100%;
+    }
+}
+
+label {
+    text-indent: -999999px;
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+textarea {
+    border: none;
+    background-color: $input-color;
+    outline: none;
+    padding: $input-padding;
+    border-radius: $border-radius;
+    width: 100%;
+    resize: none;
+}
+button {
+    width: 100%;
+    background-color: $base-color;
+    color: $color-white;
+    cursor: pointer;
+    outline: none;
+    padding: $input-padding;
+    border-radius: $border-radius;
+    height: $input-height;
+}

@@ -61,7 +61,7 @@
                 return this.$store.state.posts.mainPosts;
             },
             dateSelected() {
-                if (this.date == '') {
+                if (this.date === '') {
                     return Date.now();
                 } else {
                     return this.date;
@@ -93,19 +93,19 @@
     #create-article {
         padding-top: 46px;
 
-        & .inner {
+        .inner {
             padding: 8px 0;
         }
 
-        & ul li:not(:first-child) {
+        ul li:not(:first-child) {
             margin-top: 8px;
         }
 
-        & input {
+        input {
             width: 100%;
         }
 
-        & textarea {
+        textarea {
             height: calc(100vh - 212px);
         }
     }

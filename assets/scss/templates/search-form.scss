@@ -1,0 +1,51 @@
+.search-form {
+    & > li:not(:first-child) {
+        margin-top: $gap;
+    }
+
+    & li ul {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: $gap;
+
+        & li:first-child {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: $gap;
+        }
+    }
+
+    & input[type="date"] {
+        width: 100%;
+        max-width: 160px;
+        cursor: pointer;  
+    }
+
+    & button {
+        min-width: 56px;
+        transition: all 0.4s;
+
+        &:hover {
+            box-shadow: $box-shadow;
+            transition: all 0.4s;
+        }
+    }
+}
+
+/* ----- RESPONSIVE ----- */
+@media all and (max-width: 425px) {
+    .search-form {
+        & li ul {
+            grid-template-columns: 1fr;
+
+            & li:first-child span {
+                display: block !important;
+                width: calc(50vw - 20px);
+            }
+        }
+
+        & input[type="date"] {
+            max-width: initial;
+        }
+    }
+}

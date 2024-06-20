@@ -1,0 +1,12 @@
+.inner {
+    max-width: 415px;
+    width: 100%;
+    margin: auto;
+}
+
+/* ----- RESPONSIVE ----- */
+@media all and (max-width: 425px) {
+    .inner {
+        width: 90%;
+    }
+}

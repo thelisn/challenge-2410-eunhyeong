@@ -46,20 +46,20 @@ export default {
 
 <style scoped lang="scss">
     #feed .article {
-        & .title_wrap {
+        .title_wrap {
             display: grid;
             grid-template-columns: 2fr auto;
             grid-gap: 16px;       
         }
 
-        & .article_title {
+        .article_title {
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
             overflow: hidden;
             display: -webkit-box;
         }
 
-        & .article_date {
+        .article_date {
             display: flex;
             align-items: center;
         }

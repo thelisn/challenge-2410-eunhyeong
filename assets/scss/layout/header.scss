@@ -1,0 +1,11 @@
+#header {
+    & .logo {
+        padding: $m-page*2 0 $m-page;
+        text-align: center;
+        display: block;
+
+        & img {
+            height: $m-page;
+        }
+    }
+}
