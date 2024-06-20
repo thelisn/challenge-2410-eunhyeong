@@ -1,11 +1,18 @@
 #header {
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .logo {
         margin: $m-page*2 0 $m-page;
         text-align: center;
-        display: block;
+        display: inline-block;
+        height: $m-page;
 
         img {
-            height: $m-page;
+            height: 100%;
         }
     }
 }

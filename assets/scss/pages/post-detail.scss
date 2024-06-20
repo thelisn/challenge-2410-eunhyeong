@@ -5,11 +5,8 @@
         width: 100%;
 
         .logo {
-            padding: $gap 0;
-
-            img {
-                height: 24px;
-            }
+            margin: $gap 0;
+            height: $logo-height-mb;
         }
     }
 

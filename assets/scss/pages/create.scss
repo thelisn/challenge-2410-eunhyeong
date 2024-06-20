@@ -6,16 +6,13 @@
 
         .logo {
             margin: $gap 0;
-
-            & img {
-                height: $logo-height-mb;
-            }
+            height: $logo-height-mb;
         }
     }
 }
 
 #create-article {
-    padding-top: $logo-height-mb + $gap*3;
+    padding-top: $logo-height-mb + $gap*2;
 
     .inner {
         padding: $gap 0;

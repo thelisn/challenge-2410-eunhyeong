@@ -22,7 +22,7 @@
         height: $logo-height-mb;
         display: block;
         position: fixed;
-        top: 12px;
+        top: $gap;
         left: calc(50vw - $mobile-width / 2);
         z-index: 1;
         background: url('@/assets/img/btn-back.png') no-repeat 50% 50%;

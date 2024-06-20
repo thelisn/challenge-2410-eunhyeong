@@ -88,7 +88,7 @@
 
                     const postDate = year + '-' + month + '-' + day;
 
-
+                    
                     if (startDate && endDate) {
                         return startDate <= postDate && postDate <= endDate;
                     }
@@ -100,7 +100,6 @@
                     }
                     return true;
                 });
-
             },
             searchedPosts() {
                 if ( this.searchData.date1 !== '' && this.searchData.date2 !== '' ) {
