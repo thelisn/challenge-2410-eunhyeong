@@ -6,6 +6,12 @@
             <div class="feed_filtered"
                 v-if="isSearched===true">
 
+                <button
+                    class="btn-back" 
+                    @click="clickBack">
+                        뒤로
+                </button>
+
                 <p>
                     총 <b>{{ searchedPosts.length }}</b>개의 글이 검색되었습니다.
                 </p>
@@ -111,6 +117,15 @@
                 }
             }
         },
+        methods: {
+            clickBack() {
+                this.$store.dispatch('posts/search', {
+                    searched: false,
+                    searchKey: '',
+                });
+                this.$router.push({path: '/'})
+            },
+        }
     }
 </script>
 
