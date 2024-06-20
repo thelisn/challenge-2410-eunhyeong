@@ -5,11 +5,31 @@
         width: 100%;
 
         .logo {
-            padding: 8px 0;
+            padding: $gap 0;
 
             & img {
-                height: 24px;
+                height: $logo-height-mb;
             }
         }
+    }
+}
+
+#create-article {
+    padding-top: $logo-height-mb + $gap*3;
+
+    .inner {
+        padding: $gap 0;
+    }
+
+    ul li:not(:first-child) {
+        margin-top: $gap;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    textarea {
+        height: calc(100vh - 214px);
     }
 }

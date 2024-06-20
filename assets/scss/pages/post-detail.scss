@@ -21,11 +21,11 @@
     .title_wrap {
         border-bottom: 1px solid $base-color;
         padding-bottom: $gap;
+        cursor: text;
     }
 
     .article_title {
         pointer-events: none;
-        cursor: default;
     }
 
     .article_error {

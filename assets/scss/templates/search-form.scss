@@ -33,7 +33,7 @@
 }
 
 /* ----- RESPONSIVE ----- */
-@media all and (max-width: 425px) {
+@media all and (max-width: $mobile-width) {
     .search-form {
         li ul {
             grid-template-columns: 1fr;

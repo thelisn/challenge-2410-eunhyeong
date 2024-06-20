@@ -21,8 +21,8 @@ export default {
         }
     },
     filters : {  
-	    yyyyMMdd : function(value){ 
-            if (value == '') return '';
+	    yyyyMMdd : function(value) { 
+            if (value === '') return '';
 
             var js_date = new Date(value);
 
