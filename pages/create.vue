@@ -37,7 +37,11 @@
                         </textarea>
                     </li>
                     <li>
-                        <button id="submit-create" v-on:click="onSubmitForm">글쓰기</button>
+                        <button 
+                            id="submit-create" 
+                            v-on:click="onSubmitForm">
+                            글쓰기
+                        </button>
                     </li>
                 </ul>
             </div>

@@ -33,7 +33,11 @@
                             
                         </li>
                         <li>
-                            <button id="submit-search" v-on:click="onSearch">검색</button>                        
+                            <button 
+                                id="submit-search" 
+                                v-on:click="onSearch">
+                                검색
+                            </button>                        
                         </li>
                     </ul>
                 </li>

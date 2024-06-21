@@ -13,11 +13,11 @@
         color: $color-white;
         font-size: $font-size-m;
         padding: 1rem;
-        transition: all 0.4s;
+        transition: all $transition-sec;
 
         &:hover {
             box-shadow: $box-shadow;
-            
+            transition: all $transition-sec;
         }
     }
 

@@ -5,17 +5,14 @@
             <!-- 검색 결과 -->
             <div class="feed-filtered"
                 v-if="isSearched===true">
-
                 <button
                     class="btn-back" 
                     @click="clickBack">
                         뒤로
                 </button>
-
                 <p>
                     총 <b>{{ searchedPosts.length }}</b>개의 글이 검색되었습니다.
                 </p>
-
                 <ul class="article-list">
                     <Post
                         v-for="p in searchedPosts"
@@ -23,14 +20,12 @@
                         :post="p">
                     </Post>
                 </ul>
-
             </div>
 
 
             <!-- 모든 포스트 -->
             <div class="feed_all"
                 v-else>
-
                 <ul class="article-list">
                     <Post
                         v-for="p in mainPosts"
@@ -38,10 +33,8 @@
                         :post="p">
                     </Post>
                 </ul>
-
             </div>
 
-            
         </div>
     </div>
 </template>

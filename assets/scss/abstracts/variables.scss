@@ -1,5 +1,9 @@
 $font-noto: "Noto Sans KR", sans-serif;
 
+$font-size-l: 1.6rem;
+$font-size-m: 1rem;
+$font-size-s: 0.8rem;
+
 $base-color: #3e3c3c;
 $highlight-color: #bde991;
 $background-color: #fafafa;
@@ -7,14 +11,11 @@ $input-color: #ededed;
 $color-white: #fafafa;
 $color-gray: #aeacac;
 
-$font-size-l: 1.6rem;
-$font-size-m: 1rem;
-$font-size-s: 0.8rem;
+$box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+$transition-sec: 0.4s;
 
 $input-padding: 8px 12px;
 $input-height: 40px;
-
-$box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
 
 $gap: 8px;
 $border-radius: 4px;
@@ -22,3 +23,4 @@ $m-page: 8vh;
 
 $mobile-width: 425px;
 $logo-height-mb: 24px;
+$header-height-mb: $logo-height-mb + $gap*2;

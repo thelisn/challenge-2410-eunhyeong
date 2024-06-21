@@ -1,14 +1,20 @@
 <template>
     <li class="article">
+
         <ul>
             <li class="title-wrap">
-                <router-link v-bind:to="'post/'+post.id" class="article-title">{{ post.title }}</router-link>
+                <router-link 
+                    v-bind:to="'post/'+post.id" 
+                    class="article-title">
+                    {{ post.title }}
+                </router-link>
                 <div class="article-date">{{ post.date | yyyyMMdd }}</div>
             </li>
             <li>
                 <div class="article-body">{{ post.content }}</div>
             </li>
         </ul>
+        
         <ul class="pager">
             <li>
                 <router-link :to="`/post/${post.id-1}`">이전 글</router-link>
@@ -17,6 +23,7 @@
                 <router-link :to="`/post/${post.id+1}`">다음 글</router-link>
             </li>
         </ul>
+
     </li>
 </template>
 

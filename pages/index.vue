@@ -5,7 +5,11 @@
         <Search></Search>
         <Feed></Feed>
 
-        <router-link to="/create" class="btn-create">글쓰기</router-link>
+        <router-link 
+            to="/create" 
+            class="btn-create">
+            글쓰기
+        </router-link>
 
     </div>
 </template>
@@ -30,6 +34,6 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>

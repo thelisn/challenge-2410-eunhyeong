@@ -3,7 +3,7 @@
 #article-page {
 
     ::v-deep .article-wrap {
-        margin-top: 46px;
+        margin-top: $header-height-mb;
         padding: $gap 0 $m-page;
     }
 
@@ -19,9 +19,9 @@
 
     ::v-deep .article-error {
         text-align: center;
-        margin-top: 46px;
+        margin-top: $header-height-mb;
         display: flex;
-        height: calc(100vh - 48px);
+        height: calc(100vh - #{$header-height-mb});
         align-items: center;
         justify-content: center;
     }
