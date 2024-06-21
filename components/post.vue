@@ -8,10 +8,14 @@
                     class="article-title">
                     {{ post.title }}
                 </router-link>
-                <div class="article-date">{{ post.date | yyyyMMdd }}</div>
+                <div class="article-date">
+                    {{ post.date | yyyyMMdd }}
+                </div>
             </li>
             <li>
-                <div class="article-body">{{ post.content }}</div>
+                <div class="article-body">
+                    {{ post.content }}
+                </div>
             </li>
         </ul>
         

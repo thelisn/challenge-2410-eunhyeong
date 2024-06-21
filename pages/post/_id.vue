@@ -42,5 +42,4 @@
 
 <style scoped lang="scss">
     @import '@/assets/scss/pages/post-detail.scss';
-    @import '@/assets/scss/layout/header-small.scss';
 </style>

@@ -12,9 +12,11 @@
         padding-bottom: $gap;
         cursor: text;
     }
-
     ::v-deep .article-title {
         pointer-events: none;
+    }
+    ::v-deep .article-body {
+        display: block;
     }
 
     ::v-deep .article-error {

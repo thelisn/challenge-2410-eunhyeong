@@ -1,7 +1,7 @@
 <template>
     <div id="app">
       
-        <Header></Header>
+        <Header class="main"></Header>
         <Search></Search>
         <Feed></Feed>
 
@@ -30,7 +30,7 @@
             isSearched() {
                 return this.$store.state.posts.isSearched.searched;
             },
-        }
+        },
     }
 </script>
 

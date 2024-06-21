@@ -18,8 +18,8 @@
                     searched: false,
                     searchKey: '',
                 });
-            }
-        }
+            },
+        },
     }
 </script>
 
