@@ -1,111 +1,92 @@
 <template>
     <div id="create">
       
-      <router-link to="/" class="btn-back">뒤로</router-link>
-      <Header></Header>
+        <BtnBack></BtnBack>
+        <Header></Header>
 
-      <div id="create-article">
-        <div class="inner">
-          <ul>
-            <li>
-              <label for="title"></label>
-                <input 
-                  type="text" 
-                  id="title" 
-                  name="title" 
-                  placeholder="제목" 
-                  v-model="title"
-                  required>
-                </li>
-                <li>
-                  <textarea 
-                    v-model="content"
-                    placeholder="게시글을 작성해 주세요."
-                    required>
-                  </textarea>
-                </li>
-                <li>
-                  <button id="submit-create" v-on:click="onSubmitForm">글쓰기</button>
-                </li>
-            </ul>
+        <div id="create-article">
+            <div class="inner">
+                <ul>
+                    <li>
+                        <label for="title">제목</label>
+                        <input 
+                            type="text" 
+                            id="title" 
+                            name="title" 
+                            placeholder="제목" 
+                            v-model="title"
+                            required>
+                    </li>
+                    <li>
+                        <label for="date">날짜</label>
+                        <input
+                            type="date"
+                            id="date"
+                            name="date"
+                            v-model="date">
+                    </li>
+                    <li>
+                        <textarea 
+                            v-model="content"
+                            placeholder="게시글을 작성해 주세요."
+                            required>
+                        </textarea>
+                    </li>
+                    <li>
+                        <button 
+                            id="submit-create" 
+                            v-on:click="onSubmitForm">
+                            글쓰기
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
 
     </div>
 </template>
   
-<script>    
-  export default {
-    name: 'Create',
-    data() {
-      return {
-        title: '',
-        content: '',
-      }
-    },
-    computed: {
-      addMainPost() {
-        return this.$store.state.posts.mainPosts;
-      },
-      mainPosts() {
-        return this.$store.state.posts.mainPosts;
-      },
-    },
+<script>
+    import BtnBack from '@/components/btnback.vue';
 
-    methods: {
-      onSubmitForm() {
-        this.$store.dispatch('posts/add', {
-          title: this.title,
-          date: Date.now(),
-          content: this.content,
-          id: this.mainPosts.length +1,
-        })
-        this.$router.push({path: '/'})
-      }
-    },
-  }
+    export default {
+        name: 'Create',
+        components: {
+            'BtnBack': BtnBack
+        },
+        data() {
+            return {
+                title: '',
+                date: '',
+                content: '',
+            }
+        },
+        computed: {
+            mainPosts() {
+                return this.$store.state.posts.mainPosts;
+            },
+            dateSelected() {
+                if (this.date === '') {
+                    return Date.now();
+                } else {
+                    return this.date;
+                }
+            }
+        },
+        methods: {
+            onSubmitForm() {
+                this.$store.dispatch('posts/add', {
+                    title: this.title,
+                    date: this.dateSelected,
+                    content: this.content,
+                    id: this.mainPosts.length +1,
+                })
+                this.$router.push({path: '/post/' + this.mainPosts.length})
+            },
+        },
+    }
 </script>
-  
-<style>
-  #create #header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  #create #header .logo {
-    padding: 8px 0;
-  }
-  #create #header .logo img {
-    height: 24px;
-  }
 
-  .btn-back {
-    text-indent: -9999px;
-    width: 24px;
-    height: 24px;
-    display: block;
-    position: fixed;
-    top: 12px;
-    left: 5vw;
-    z-index: 1;
-    background: url('../static/img/btn-back.png') no-repeat 50% 50%;
-    background-size: cover;
-  }
-
-  #create-article {
-    padding-top: 46px;
-  }
-  #create-article .inner {
-      padding: 8px 0;
-  }
-
-  #create-article ul li:not(:first-child) {
-    margin-top: 8px;
-  }
-  #create-article input {
-    width: 100%;
-  }
-  #create-article textarea {
-    height: 48vh;
-  }
+<style scoped lang="scss">
+    @import '@/assets/scss/pages/create.scss';
 </style>

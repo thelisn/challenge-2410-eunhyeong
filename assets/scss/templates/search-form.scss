@@ -1,0 +1,50 @@
+@import '@/assets/scss/abstracts/variables.scss';
+
+.search-form {
+    > li:not(:first-child) {
+        margin-top: $gap;
+    }
+
+    li ul {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: $gap;
+
+        li:first-child {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: $gap;
+        }
+    }
+
+    input[type="date"] {
+        width: 100%;
+        cursor: pointer;  
+    }
+
+    button {
+        transition: all $transition-sec;
+
+        &:hover {
+            box-shadow: $box-shadow;
+            transition: all $transition-sec;
+        }
+    }
+}
+
+/* ----- RESPONSIVE ----- */
+@media all and (max-width: $mobile-width) {
+    .search-form {
+        li ul {
+            grid-template-columns: 1fr;
+
+            li:first-child span {
+                display: block !important;
+            }
+        }
+
+        input[type="date"] {
+            max-width: initial;
+        }
+    }
+}

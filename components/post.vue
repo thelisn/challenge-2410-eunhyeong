@@ -1,14 +1,41 @@
 <template>
     <li class="article">
-        <dl>
-            <dt>
-                <router-link :to="'post/'+post.id" class="article_title">{{ post.title }}</router-link>
-                <div class="article_date">{{ post.date | yyyyMMdd }}</div>
-            </dt>
-            <dd>
-                <div class="article_body">{{ post.content }}</div>
-            </dd>
-        </dl>
+
+        <ul>
+            <li class="title-wrap">
+                <router-link 
+                    v-bind:to="'post/'+post.id" 
+                    class="article-title">
+                    {{ post.title }}
+                </router-link>
+                <div class="article-date">
+                    {{ post.date | yyyyMMdd }}
+                </div>
+            </li>
+            <li>
+                <div class="article-body">
+                    {{ post.content }}
+                </div>
+            </li>
+        </ul>
+        
+        <ul class="pager">
+            <li>
+                <router-link 
+                    :to="`/post/${post.id-1}`"
+                    v-if="post.id-1 > 0">
+                    이전 글
+                </router-link>
+            </li>
+            <li>
+                <router-link 
+                    :to="`/post/${post.id+1}`"
+                    v-if="posts >= post.id+1">
+                    다음 글
+                </router-link>
+            </li>
+        </ul>
+
     </li>
 </template>
 
@@ -20,9 +47,14 @@ export default {
             required: true,
         }
     },
+    computed: {
+        posts() {
+                return this.$store.state.posts.mainPosts.length;
+            },
+    },
     filters : {  
-	    yyyyMMdd : function(value){ 
-            if(value == '') return '';
+	    yyyyMMdd : function(value) { 
+            if (value === '') return '';
 
             var js_date = new Date(value);
 
@@ -30,20 +62,20 @@ export default {
             var month = js_date.getMonth() + 1;
             var day = js_date.getDate();
 
-            if(month < 10){
+            if (month < 10) {
                 month = '0' + month;
             }
 
-            if(day < 10){
+            if (day < 10) {
                 day = '0' + day;
             }
 
             return year + '-' + month + '-' + day;
 	    }
-    }
+    },
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+    @import '@/assets/scss/templates/posts.scss';
 </style>

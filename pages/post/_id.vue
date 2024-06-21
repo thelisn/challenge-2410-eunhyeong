@@ -1,53 +1,45 @@
 <template>
-    <div id="article_page">
+    <div id="article-page">
 
-        <router-link to="/" class="btn-back">뒤로</router-link>
+        <BtnBack></BtnBack>
         <Header></Header>
 
         <div class="inner">
-          <div v-if="post" class="article_wrap">
-            <Post :post="post"></Post>
-          </div>
-          <div v-else>
-            해당 아이디의 게시글이 존재하지 않습니다. 
-          </div>
+
+            <!-- 게시글 -->
+            <div v-if="post" class="article-wrap">
+                <Post :post="post"></Post>
+            </div>
+            
+            <!-- 게시글 없을 시 -->
+            <div v-else class="article-error">
+                해당 아이디의 게시글이 존재하지 않습니다. 
+            </div>
+
         </div>
 
     </div>
 </template>
 
 <script>
-import Header from '../../components/header.vue'
-import Post from '../../components/post.vue'
+    import Header from '@/components/header.vue'
+    import Post from '@/components/post.vue'
+    import BtnBack from '@/components/btnback.vue';
 
-export default {
-  components: {
-    'Header': Header,
-    'Post': Post
-  },
-  computed: {
-    post() {
-        return this.$store.state.posts.mainPosts.find(v => v.id === parseInt(this.$route.params.id, 10));
-      },
-  },
-}
+    export default {
+        components: {
+            'Header': Header,
+            'Post': Post,
+            'BtnBack': BtnBack
+        },
+        computed: {
+            post() {
+                return this.$store.state.posts.mainPosts.find(v => v.id === parseInt(this.$route.params.id, 10));
+            },
+        },
+    }
 </script>
 
-<style>
-  #article_page #header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  #article_page #header .logo {
-    padding: 8px 0;
-  }
-  #article_page #header .logo img {
-    height: 24px;
-  }
-
-  #article_page .article_wrap {
-    margin-top: 46px;
-    padding: 8px 0 8vh;
-  }
+<style scoped lang="scss">
+    @import '@/assets/scss/pages/post-detail.scss';
 </style>

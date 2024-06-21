@@ -1,0 +1,38 @@
+#header {
+    background-color: $background-color;
+    width: 100%;
+    position: fixed;
+    top: 0 ;
+    transition: box-shadow $transition-sec;
+
+    .inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo {
+        margin: $gap 0;
+        height: $logo-height-mb;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &.main {
+        position: initial;
+
+        .logo {
+            text-align: center;
+            display: inline-block;
+            height: $m-page;
+            margin: $m-page*2 0 $m-page;
+        }
+    }
+
+    &.scrolled:not(.main) {
+        box-shadow: $box-shadow;
+        transition: box-shadow $transition-sec;
+    }
+}

@@ -4,77 +4,72 @@
 
             <ul class="search-form">
                 <li>
-                    <label for="searchKey"></label>
+                    <label for="searchKey">검색어</label>
                     <input 
                         type="search" 
                         id="searchKey" 
                         name="searchKey" 
                         v-model="searchKey"
+                        v-on:keyup.enter="onSearch"
                         placeholder="검색어를 입력하세요">
                 </li>
                 <li>
-                    <dl>
-                        <dd>
+                    <ul>
+                        <li>
                             <span>
-                                <label for="date1"></label>
-                                <input type="date" id="date1">
+                                <label for="date1">시작 날짜</label>
+                                <input 
+                                    type="date" 
+                                    id="date1"
+                                    v-model="date1">
                             </span>
                             <span>
-                                <label for="date2"></label>
-                                <input type="date" id="date2">
+                                <label for="date2">종료 날짜</label>
+                                <input 
+                                    type="date" 
+                                    id="date2"
+                                    v-model="date2">
                             </span>
                             
-                        </dd>
-                        <dt>
-                            <button id="submit-search" v-on:click="onSearch">검색</button>                        
-                        </dt>
-                    </dl>
+                        </li>
+                        <li>
+                            <button 
+                                id="submit-search" 
+                                v-on:click="onSearch">
+                                검색
+                            </button>                        
+                        </li>
+                    </ul>
                 </li>
             </ul>
 
         </div>
     </div>
-    
 </template>
 
 <script>
     export default {
         data() {
             return {
-                searchKey: '',
                 searched: false,
+                searchKey: '',
+                date1: '',
+                date2: '',
             }
         },
         methods: {
-            searchByKey() {
-                
-            },
             onSearch(keyword) {
-                if (this.searchKey == '') { 
-                    alert('검색어를 입력해주세요.');
-                } else {
-                    this.$store.dispatch('posts/search', {
-                        searchKey: this.searchKey,
+                this.$store.dispatch('posts/search', {
                         searched: true,
+                        searchKey: this.searchKey,
+                        date1: this.date1,
+                        date2: this.date2
                     });
-                }
             }
         },
     }
 </script>
 
-<style>
-    .search-form li:not(:first-child) {
-        margin-top: 8px;
-    }
-    .search-form li dl {
-        display: grid;
-        grid-template-columns: 3fr 1fr;
-        grid-gap: 8px;
-    }
-    .search-form li dl dd {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 8px;
-    }
+<style scoped lang="scss">
+    @import '@/assets/scss/templates/search-form.scss';
 </style>

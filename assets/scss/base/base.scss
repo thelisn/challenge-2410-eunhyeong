@@ -1,0 +1,12 @@
+.inner {
+    max-width: $mobile-width;
+    width: 100%;
+    margin: auto;
+}
+
+/* ----- RESPONSIVE ----- */
+@media all and (max-width: $mobile-width) {
+    .inner {
+        width: 90%;
+    }
+}

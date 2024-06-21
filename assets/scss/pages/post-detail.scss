@@ -1,0 +1,30 @@
+@import '@/assets/scss/abstracts/variables.scss';
+
+#article-page {
+
+    ::v-deep .article-wrap {
+        margin-top: $header-height-mb;
+        padding: $gap 0 $m-page;
+    }
+
+    ::v-deep .title-wrap {
+        border-bottom: 1px solid $base-color;
+        padding-bottom: $gap;
+        cursor: text;
+    }
+    ::v-deep .article-title {
+        pointer-events: none;
+    }
+    ::v-deep .article-body {
+        display: block;
+    }
+
+    ::v-deep .article-error {
+        text-align: center;
+        margin-top: $header-height-mb;
+        display: flex;
+        height: calc(100vh - #{$header-height-mb});
+        align-items: center;
+        justify-content: center;
+    }
+}

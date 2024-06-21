@@ -1,0 +1,26 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    color: $base-color;
+    font-size: $font-size-m;
+    font-family: $font-noto;
+}
+html {
+    background-color: $background-color;
+}
+
+li { 
+    list-style-type: none; 
+}
+a {
+    text-decoration: none;
+    color: $base-color;
+
+    &:focus {
+        outline: none;
+    }
+}
+::selection {
+    background-color: $highlight-color;
+}

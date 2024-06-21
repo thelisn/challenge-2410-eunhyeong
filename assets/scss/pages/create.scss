@@ -1,0 +1,21 @@
+@import '@/assets/scss/abstracts/variables.scss';
+
+#create-article {
+    padding-top: $logo-height-mb + $gap*2;
+
+    .inner {
+        padding: $gap 0;
+    }
+
+    ul li:not(:first-child) {
+        margin-top: $gap;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    textarea {
+        height: calc(100vh - 214px);
+    }
+}

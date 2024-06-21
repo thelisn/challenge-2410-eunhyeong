@@ -1,0 +1,14 @@
+.pager {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: $gap*2;
+    margin-top: $m-page/2;
+    font-weight: bold;
+
+    li:last-child {
+        text-align: right;
+    }
+    li a:hover {
+        text-decoration: underline;
+    }
+}
