@@ -1,15 +1,4 @@
-#create {
-    #header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-
-        .logo {
-            margin: $gap 0;
-            height: $logo-height-mb;
-        }
-    }
-}
+@import '@/assets/scss/abstracts/variables.scss';
 
 #create-article {
     padding-top: $logo-height-mb + $gap*2;

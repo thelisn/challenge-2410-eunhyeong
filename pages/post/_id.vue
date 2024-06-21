@@ -1,5 +1,5 @@
 <template>
-    <div id="article_page">
+    <div id="article-page">
 
         <button
             class="btn-back" 
@@ -9,10 +9,10 @@
         <Header></Header>
 
         <div class="inner">
-            <div v-if="post" class="article_wrap">
+            <div v-if="post" class="article-wrap">
                 <Post :post="post"></Post>
             </div>
-            <div v-else class="article_error">
+            <div v-else class="article-error">
                 해당 아이디의 게시글이 존재하지 않습니다. 
             </div>
         </div>
@@ -46,6 +46,7 @@
     }
 </script>
 
-<style lang="scss">
-
+<style scoped lang="scss">
+    @import '@/assets/scss/pages/post-detail.scss';
+    @import '@/assets/scss/layout/header-small.scss';
 </style>

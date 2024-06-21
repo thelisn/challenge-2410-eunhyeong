@@ -1,5 +1,7 @@
+@import '@/assets/scss/abstracts/variables.scss';
+
 .search-form {
-    & > li:not(:first-child) {
+    > li:not(:first-child) {
         margin-top: $gap;
     }
 

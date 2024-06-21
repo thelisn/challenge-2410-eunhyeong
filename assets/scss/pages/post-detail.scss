@@ -1,31 +1,23 @@
-#article_page {
-    #header {
-        position: fixed;
-        top: 0;
-        width: 100%;
+@import '@/assets/scss/abstracts/variables.scss';
 
-        .logo {
-            margin: $gap 0;
-            height: $logo-height-mb;
-        }
-    }
+#article-page {
 
-    .article_wrap {
+    ::v-deep .article-wrap {
         margin-top: 46px;
         padding: $gap 0 $m-page;
     }
 
-    .title_wrap {
+    ::v-deep .title-wrap {
         border-bottom: 1px solid $base-color;
         padding-bottom: $gap;
         cursor: text;
     }
 
-    .article_title {
+    ::v-deep .article-title {
         pointer-events: none;
     }
 
-    .article_error {
+    ::v-deep .article-error {
         text-align: center;
         margin-top: 46px;
         display: flex;

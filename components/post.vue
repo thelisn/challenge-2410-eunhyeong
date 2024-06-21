@@ -1,12 +1,12 @@
 <template>
     <li class="article">
         <ul>
-            <li class="title_wrap">
-                <router-link v-bind:to="'post/'+post.id" class="article_title">{{ post.title }}</router-link>
-                <div class="article_date">{{ post.date | yyyyMMdd }}</div>
+            <li class="title-wrap">
+                <router-link v-bind:to="'post/'+post.id" class="article-title">{{ post.title }}</router-link>
+                <div class="article-date">{{ post.date | yyyyMMdd }}</div>
             </li>
             <li>
-                <div class="article_body">{{ post.content }}</div>
+                <div class="article-body">{{ post.content }}</div>
             </li>
         </ul>
         <ul class="pager">
@@ -53,26 +53,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    #feed .article {
-        .title_wrap {
-            display: grid;
-            grid-template-columns: 2fr auto;
-            grid-gap: 16px;       
-        }
-
-        .article_title {
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            display: -webkit-box;
-        }
-        .article_title:hover {
-            text-decoration: underline;
-        }
-
-        .article_date {
-            display: flex;
-            align-items: center;
-        }
-    }
+    @import '@/assets/scss/templates/posts.scss';
 </style>

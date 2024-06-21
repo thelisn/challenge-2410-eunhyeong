@@ -3,7 +3,7 @@
         <div class="inner">
 
             <!-- 검색 결과 -->
-            <div class="feed_filtered"
+            <div class="feed-filtered"
                 v-if="isSearched===true">
 
                 <button
@@ -16,7 +16,7 @@
                     총 <b>{{ searchedPosts.length }}</b>개의 글이 검색되었습니다.
                 </p>
 
-                <ul class="article_list">
+                <ul class="article-list">
                     <Post
                         v-for="p in searchedPosts"
                         :key="p.id"
@@ -31,7 +31,7 @@
             <div class="feed_all"
                 v-else>
 
-                <ul class="article_list">
+                <ul class="article-list">
                     <Post
                         v-for="p in mainPosts"
                         :key="p.id"
@@ -128,12 +128,6 @@
     }
 </script>
 
-<style scoped>
-    .article_list li:not(:first-child) {
-        margin-top: 32px;
-    }
-    .feed_filtered p {
-        text-align: center;
-        margin: 4vh 0;
-    }
+<style scoped lang="scss">
+    @import '@/assets/scss/templates/feed.scss';
 </style>

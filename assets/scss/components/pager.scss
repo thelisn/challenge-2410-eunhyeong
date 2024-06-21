@@ -1,8 +1,8 @@
 .pager {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
-    margin-top: 8vh;
+    grid-gap: $gap*2;
+    margin-top: $m-page/2;
 
     li:last-child {
         text-align: right;

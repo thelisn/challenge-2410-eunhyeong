@@ -1,6 +1,40 @@
+@import '@/assets/scss/abstracts/variables.scss';
+
 #feed {
     margin: $m-page 0;
+
+    ::v-deep .title-wrap {
+        display: grid;
+        grid-template-columns: 2fr auto;
+        grid-gap: 16px;       
+    }
+
+    ::v-deep .article-title {
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    ::v-deep .article-date {
+        display: flex;
+        align-items: center;
+    }
+
+    ::v-deep .pager {
+        display: none;
+    }
 }
-#feed .pager {
-    display: none;
+
+.article-list li:not(:first-child) {
+    margin-top: $gap*3;
+}
+
+.feed-filtered p {
+    text-align: center;
+    margin: $m-page/2 0;
 }

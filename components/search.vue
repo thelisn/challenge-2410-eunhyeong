@@ -41,7 +41,6 @@
 
         </div>
     </div>
-    
 </template>
 
 <script>
@@ -67,6 +66,6 @@
     }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    @import '@/assets/scss/templates/search-form.scss';
 </style>
