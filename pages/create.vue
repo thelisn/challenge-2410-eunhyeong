@@ -1,11 +1,7 @@
 <template>
     <div id="create">
       
-        <button
-            class="btn-back" 
-            @click="clickBack">
-                뒤로
-        </button>
+        <BtnBack></BtnBack>
         <Header></Header>
 
         <div id="create-article">
@@ -50,9 +46,14 @@
     </div>
 </template>
   
-<script>    
+<script>
+    import BtnBack from '@/components/btnback.vue';
+
     export default {
         name: 'Create',
+        components: {
+            'BtnBack': BtnBack
+        },
         data() {
             return {
                 title: '',
@@ -81,13 +82,6 @@
                     id: this.mainPosts.length +1,
                 })
                 this.$router.push({path: '/post/' + this.mainPosts.length})
-            },
-            clickBack() {
-                this.$store.dispatch('posts/search', {
-                    searched: false,
-                    searchKey: '',
-                });
-                this.$router.push({path: '/'})
             },
         },
     }
