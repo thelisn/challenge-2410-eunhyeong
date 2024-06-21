@@ -3,6 +3,7 @@
     width: 100%;
     position: fixed;
     top: 0 ;
+    transition: box-shadow $transition-sec;
 
     .inner {
         display: flex;
@@ -28,5 +29,10 @@
             height: $m-page;
             margin: $m-page*2 0 $m-page;
         }
+    }
+
+    &.scrolled:not(.main) {
+        box-shadow: $box-shadow;
+        transition: box-shadow $transition-sec;
     }
 }

@@ -1,7 +1,9 @@
 <template>
     <div id="app">
       
-        <Header class="main"></Header>
+        <Header 
+            class="main">
+        </Header>
         <Search></Search>
         <Feed></Feed>
 
