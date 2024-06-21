@@ -10,6 +10,7 @@
             <div v-if="post" class="article-wrap">
                 <Post :post="post"></Post>
             </div>
+            
             <!-- 게시글 없을 시 -->
             <div v-else class="article-error">
                 해당 아이디의 게시글이 존재하지 않습니다. 

@@ -17,10 +17,18 @@
         
         <ul class="pager">
             <li>
-                <router-link :to="`/post/${post.id-1}`">이전 글</router-link>
+                <router-link 
+                    :to="`/post/${post.id-1}`"
+                    v-if="post.id-1 > 0">
+                    이전 글
+                </router-link>
             </li>
             <li>
-                <router-link :to="`/post/${post.id+1}`">다음 글</router-link>
+                <router-link 
+                    :to="`/post/${post.id+1}`"
+                    v-if="posts >= post.id+1">
+                    다음 글
+                </router-link>
             </li>
         </ul>
 
@@ -34,6 +42,11 @@ export default {
             type: Object,
             required: true,
         }
+    },
+    computed: {
+        posts() {
+                return this.$store.state.posts.mainPosts.length;
+            },
     },
     filters : {  
 	    yyyyMMdd : function(value) { 
