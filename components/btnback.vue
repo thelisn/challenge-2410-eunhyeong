@@ -10,11 +10,12 @@
     export default {
         methods: {
             clickBack() {
+                console.log('test');
                 this.$store.dispatch('posts/search', {
                     searched: false,
                     searchKey: '',
                 });
-                this.$router.push({path: '/'})
+                this.$router.go(-1);
             },
         }
     }
