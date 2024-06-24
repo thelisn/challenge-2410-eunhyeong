@@ -2,7 +2,7 @@
     <div id="app">
       
         <Header 
-            :class="{ 'main': headerMain === true }">
+            :class="{ 'main': header.headerMain !== false }">
         </Header>
         <Search></Search>
         <Feed></Feed>
@@ -34,9 +34,9 @@
             'Feed': Feed,
         },
         computed: {
-            isSearched() {
-                return this.$store.state.posts.isSearched.searched;
-            },
+            header() {
+                return this.$store.state.header.headerMain;
+            }
         },
     }
 </script>

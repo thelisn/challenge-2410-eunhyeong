@@ -5,11 +5,6 @@
             <!-- 검색 결과 -->
             <div class="feed-filtered"
                 v-if="isSearched===true">
-                <button
-                    class="btn-back" 
-                    @click="clickBack">
-                        뒤로
-                </button>
                 <p>
                     총 <b>{{ searchedPosts.length }}</b>개의 글이 검색되었습니다.
                 </p>
@@ -41,10 +36,12 @@
 
 <script>
     import Post from "@/components/post.vue"
+    import BtnBack from "@/components/btnback.vue";
 
     export default {
         components: {
             'Post': Post,
+            'BtnBack': BtnBack,
         },
         computed: {
             mainPosts() {
@@ -62,7 +59,6 @@
                 });
             },
             searchByDate() {
-
                 const startDate = this.searchData.date1;
                 const endDate = this.searchData.date2;
 
@@ -107,6 +103,9 @@
                     return this.mainPosts;
                 } else if ( this.searchData.searchKey.trim() === '' && this.searchData.date1 !== '' && this.searchData.date2 !== '' ) {
                     // 키워드 X 시작날짜 O 종료날짜 O
+                    this.$store.dispatch('header/main', {
+                        headerMain: false,
+                    });
                     return this.searchByDate;
                 } else if ( this.searchData.searchKey.trim() === '' && this.searchData.date1 !== '' && this.searchData.date2 === '' ) {
                     // 키워드 X 시작날짜 O 종료날짜 X
@@ -118,9 +117,15 @@
                 } 
                 else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 === '' && this.searchData.date2 === '' ) {
                     // 키워드 O 시작날짜 X 종료날짜 X
+                    this.$store.dispatch('header/main', {
+                        headerMain: false,
+                    });
                     return this.searchByKeyword;
                 } else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 !== '' && this.searchData.date2 !== '' ) {
                     // 키워드 O 시작날짜 O 종료날짜 O
+                    this.$store.dispatch('header/main', {
+                        headerMain: false,
+                    });
                     return this.searchByAll;
                 } else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 !== '' && this.searchData.date2 === '' ) {
                     // 키워드 O 시작날짜 O 종료날짜 X
@@ -138,7 +143,7 @@
                     searched: false,
                     searchKey: '',
                 });
-                this.$router.push({path: '/'})
+                this.$router.push({path: '/'});
             },
         }
     }

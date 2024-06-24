@@ -1,18 +1,33 @@
 @import '@/assets/scss/abstracts/variables.scss';
 
 .search-form {
+    margin-top: $header-height-mb + $gap;
+
     > li:not(:first-child) {
         margin-top: $gap;
     }
 
+    li:first-child {
+        display: grid;
+        grid-template-columns: auto 56px;
+
+        input[type="search"] {
+            border-radius: 4px 0 0 4px;
+        }
+
+        #submit-search {
+            border-radius: 0 4px 4px 0;
+        }
+    }
+
     li ul {
         display: grid;
-        grid-template-columns: 3fr 1fr;
+        grid-template-columns: auto 56px;
         grid-gap: $gap;
 
         li:first-child {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr $gap 1fr;
             grid-gap: $gap;
         }
     }
@@ -22,12 +37,22 @@
         cursor: pointer;  
     }
 
+    p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     button {
         transition: all $transition-sec;
 
         &:hover {
             box-shadow: $box-shadow;
             transition: all $transition-sec;
+        }
+
+        &.reset {
+            background-color: $color-gray;
         }
     }
 }

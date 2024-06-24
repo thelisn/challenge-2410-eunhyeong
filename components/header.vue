@@ -4,11 +4,11 @@
         :class="{ 'scrolled': !notScrolled }">
 
         <div class="inner">
-            <router-link to="/" class="logo">
-                <img 
-                    src="@/assets/img/logo-black.png"
-                    v-on:click="clickLogo">
-            </router-link>
+            <div 
+                class="logo"
+                v-on:click="clickLogo">
+                <img src="@/assets/img/logo-black.png">
+            </div>
         </div>
         
     </header>
@@ -36,10 +36,8 @@
         },
         methods: {
             clickLogo() {
-                this.$store.dispatch('posts/search', {
-                    searched: false,
-                    searchKey: '',
-                });
+                this.$router.go(this.$router.currentRoute);
+                // this.$router.push({path: '/'});
             },
             onScroll() {
                 if (window.scrollY < 0) {
