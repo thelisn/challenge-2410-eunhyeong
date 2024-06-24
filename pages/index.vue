@@ -2,7 +2,7 @@
     <div id="app">
       
         <Header 
-            class="main">
+            :class="{ 'main': headerMain === true }">
         </Header>
         <Search></Search>
         <Feed></Feed>
@@ -23,6 +23,11 @@
 
     export default {
         name: 'IndexPage',
+        data() {
+            return {
+                headerMain: true,
+            }
+        },
         components: {
             'Header': Header,
             'Search': Search,
