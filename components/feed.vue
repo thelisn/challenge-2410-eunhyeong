@@ -104,7 +104,7 @@
                 } else if ( this.searchData.searchKey.trim() === '' && this.searchData.date1 !== '' && this.searchData.date2 !== '' ) {
                     // 키워드 X 시작날짜 O 종료날짜 O
                     this.$store.dispatch('header/main', {
-                        headerMain: false,
+                        headerMain: true,
                     });
                     return this.searchByDate;
                 } else if ( this.searchData.searchKey.trim() === '' && this.searchData.date1 !== '' && this.searchData.date2 === '' ) {
@@ -118,13 +118,13 @@
                 else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 === '' && this.searchData.date2 === '' ) {
                     // 키워드 O 시작날짜 X 종료날짜 X
                     this.$store.dispatch('header/main', {
-                        headerMain: false,
+                        headerMain: true,
                     });
                     return this.searchByKeyword;
                 } else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 !== '' && this.searchData.date2 !== '' ) {
                     // 키워드 O 시작날짜 O 종료날짜 O
                     this.$store.dispatch('header/main', {
-                        headerMain: false,
+                        headerMain: true,
                     });
                     return this.searchByAll;
                 } else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 !== '' && this.searchData.date2 === '' ) {

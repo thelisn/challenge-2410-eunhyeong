@@ -1,13 +1,13 @@
 <template>
     <header 
-        id="header" 
+        id="header"
         :class="{ 'scrolled': !notScrolled }">
 
         <div class="inner">
-            <div 
-                class="logo"
-                v-on:click="clickLogo">
-                <img src="@/assets/img/logo-black.png">
+            <div class="logo">
+                <img 
+                    v-on:click="clickLogo($event)"
+                    src="@/assets/img/logo-black.png">
             </div>
         </div>
         
@@ -34,10 +34,20 @@
         beforeDestroy() {
             window.removeEventListener('scroll', this.onScroll);
         },
+        updated() {
+            this.$store.dispatch('posts/add', {
+                headerReset: this.headerReset,
+            })
+        },
         methods: {
-            clickLogo() {
-                this.$router.go(this.$router.currentRoute);
-                // this.$router.push({path: '/'});
+            clickLogo(event) {
+                if(event.target.classList.contains('reset')) {
+                    console.log('has reset');
+                    this.$router.go(this.$router.currentRoute);
+                } else {
+                    console.log('no');
+                    this.$router.push({path: '/'});
+                }
             },
             onScroll() {
                 if (window.scrollY < 0) {

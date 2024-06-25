@@ -2,7 +2,7 @@
     <div id="app">
       
         <Header 
-            :class="{ 'main': header.headerMain !== false }">
+            :class="{ 'main': !header.headerMain, 'reset': headerReset }">
         </Header>
         <Search></Search>
         <Feed></Feed>
@@ -25,13 +25,17 @@
         name: 'IndexPage',
         data() {
             return {
-                headerMain: true,
+                headerMain: '',
+                headerReset: true,
             }
         },
         components: {
             'Header': Header,
             'Search': Search,
             'Feed': Feed,
+        },
+        created() {
+            this.fetchData()
         },
         computed: {
             header() {

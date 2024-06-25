@@ -2,7 +2,9 @@
     <div id="create">
       
         <BtnBack></BtnBack>
-        <Header></Header>
+        <Header
+            :class="{'reset': headerReset }">
+        </Header>
 
         <div id="create-article">
             <div class="inner">
@@ -59,6 +61,7 @@
                 title: '',
                 date: '',
                 content: '',
+                headerReset: false,
             }
         },
         computed: {
@@ -83,7 +86,7 @@
                 })
                 this.$router.push({path: '/post/' + this.mainPosts.length})
             },
-        },
+        }
     }
 </script>
 
