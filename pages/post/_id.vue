@@ -43,6 +43,11 @@
             post() {
                 return this.$store.state.posts.mainPosts.find(v => v.id === parseInt(this.$route.params.id, 10));
             },
+        },
+        created() {
+            this.$store.dispatch('header/reset', {
+                headerReset: this.headerReset,
+            })
         }
     }
 </script>

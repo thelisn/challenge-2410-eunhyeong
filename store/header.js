@@ -8,8 +8,7 @@ export const mutations = {
         state.headerMain = payload;
     },
     resetPage(state, payload) {
-        state.headerReset = payload;
-        console.log(payload);
+        state.headerReset = payload.headerReset;
     }
 };
 

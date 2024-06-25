@@ -6,8 +6,10 @@
         <div class="inner">
             <div class="logo">
                 <img 
+                    :class="{'reset': reset === true }"
                     v-on:click="clickLogo($event)"
                     src="@/assets/img/logo-black.png">
+
             </div>
         </div>
         
@@ -34,18 +36,16 @@
         beforeDestroy() {
             window.removeEventListener('scroll', this.onScroll);
         },
-        updated() {
-            this.$store.dispatch('posts/add', {
-                headerReset: this.headerReset,
-            })
+        computed: {
+            reset() {
+                return this.$store.state.header.headerReset;
+            },
         },
         methods: {
             clickLogo(event) {
                 if(event.target.classList.contains('reset')) {
-                    console.log('has reset');
                     this.$router.go(this.$router.currentRoute);
                 } else {
-                    console.log('no');
                     this.$router.push({path: '/'});
                 }
             },

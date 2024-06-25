@@ -34,14 +34,16 @@
             'Search': Search,
             'Feed': Feed,
         },
-        created() {
-            this.fetchData()
-        },
         computed: {
             header() {
                 return this.$store.state.header.headerMain;
             }
         },
+        created() {
+            this.$store.dispatch('header/reset', {
+                headerReset: this.headerReset,
+            })
+        }
     }
 </script>
 

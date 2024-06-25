@@ -86,6 +86,11 @@
                 })
                 this.$router.push({path: '/post/' + this.mainPosts.length})
             },
+        },
+        created() {
+            this.$store.dispatch('header/reset', {
+                headerReset: this.headerReset,
+            })
         }
     }
 </script>
