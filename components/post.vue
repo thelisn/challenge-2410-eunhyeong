@@ -77,5 +77,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
+    @import '@/assets/scss/components/pager.scss';
     @import '@/assets/scss/templates/posts.scss';
 </style>

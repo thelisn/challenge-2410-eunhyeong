@@ -96,5 +96,6 @@
 </script>
 
 <style scoped lang="scss">
+    @import '@/assets/scss/layout/forms.scss';
     @import '@/assets/scss/pages/create.scss';
 </style>

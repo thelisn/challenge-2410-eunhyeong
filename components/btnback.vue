@@ -15,3 +15,7 @@
         }
     }
 </script>
+
+<style scoped lang="scss">
+     @import '@/assets/scss/components/buttons.scss';
+</style>
