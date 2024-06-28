@@ -2,7 +2,7 @@
     <div id="create">
       
         <BtnBack></BtnBack>
-        <Header></Header>
+        <Header :main="false" :reset="false"></Header>
 
         <div id="create-article">
             <div class="inner">
@@ -60,14 +60,6 @@
                 date: '',
                 content: '',
             }
-        },
-        created() {
-            this.$store.dispatch('header/main', {
-                headerMain: false,
-            })
-            this.$store.dispatch('header/reset', {
-                headerReset: false,
-            })
         },
         computed: {
             mainPosts() {

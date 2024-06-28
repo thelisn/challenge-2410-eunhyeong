@@ -1,9 +1,9 @@
 <template>
     <div id="app">
       
-        <Header></Header>
-        <Search></Search>
-        <Feed></Feed>
+        <Header :main="this.main" :reset="this.reset"></Header>
+        <Search @main="getMain" @reset="getReset"></Search>
+        <Feed @main="getMain"></Feed>
 
         <BtnCreate></BtnCreate>
 
@@ -24,13 +24,19 @@
             'Feed': Feed,
             'BtnCreate': BtnCreate,
         },
-        created() {
-            this.$store.dispatch('header/main', {
-                headerMain: true,
-            })
-            this.$store.dispatch('header/reset', {
-                headerReset: true,
-            })
+        data() {
+            return {
+                main: null,
+                reset: null,
+            }
+        },
+        methods: {
+            getMain(data) {
+                return this.main = data;
+            },
+            getReset(data) {
+                return this.reset = data;
+            },
         },
     }
 </script>

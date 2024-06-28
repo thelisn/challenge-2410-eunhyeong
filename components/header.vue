@@ -1,15 +1,17 @@
 <template>
     <header 
         id="header"
-        :class="{ 'main': main !== false, 'reset': reset === true , 'scrolled': !notScrolled }">
+        :class="{ 
+            'main': this.main !==false,
+            'reset': this.reset === true,
+            'scrolled': !notScrolled }">
 
         <div class="inner">
             <div class="logo">
                 <img 
-                    :class="{'reset': reset === true }"
+                    :class="{'reset': this.reset === true }"
                     v-on:click="clickLogo($event)"
                     src="@/assets/img/logo-black.png">
-
             </div>
         </div>
         
@@ -18,13 +20,21 @@
 
 <script>
     export default {
+        props: {
+            main: {
+                type: Boolean,
+                default: true,
+            },
+            reset: {
+                type: Boolean,
+                default: true,
+            }
+        },
         data() {
             return {
                 notScrolled: true,
                 lastScrollPosition: 0,
                 scrollValue: 0,
-                headerMain: null,
-                headerReset: null,
             }
         },
         mounted() {
@@ -37,14 +47,6 @@
         },
         beforeDestroy() {
             window.removeEventListener('scroll', this.onScroll);
-        },
-        computed: {
-            reset() {
-                return this.$store.state.header.headerReset;
-            },
-            main() {
-                return this.$store.state.header.headerMain;
-            }
         },
         methods: {
             clickLogo(event) {

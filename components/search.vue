@@ -73,14 +73,11 @@
                     date1: this.date1,
                     date2: this.date2
                 });
+                this.$emit('reset', true);
             },
             resetSearch() {
-                this.$store.dispatch('header/main', {
-                    headerMain: true,
-                })
-                this.$store.dispatch('header/reset', {
-                    headerReset: true,
-                })
+                this.$emit('main', true);
+                this.$emit('reset', true);
 
                 this.$store.dispatch('posts/search', {
                     searched: false,

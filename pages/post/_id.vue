@@ -2,7 +2,7 @@
     <div id="article-page">
 
         <BtnBack></BtnBack>
-        <Header></Header>
+        <Header :main="false" :reset="false"></Header>
 
         <div class="inner">
 
@@ -34,17 +34,7 @@
         },
         data() {
             return {
-                headerMain: false,
-                headerReset: false,
             }
-        },
-        created() {
-            this.$store.dispatch('header/main', {
-                headerMain: this.headerMain,
-            })
-            this.$store.dispatch('header/reset', {
-                headerReset: this.headerReset,
-            })
         },
         computed: {
             post() {
