@@ -7,11 +7,7 @@
         <Search></Search>
         <Feed></Feed>
 
-        <router-link 
-            to="/create" 
-            class="btn-create">
-            글쓰기
-        </router-link>
+        <BtnCreate></BtnCreate>
 
     </div>
 </template>
@@ -20,6 +16,7 @@
     import Header from '@/components/header.vue'
     import Search from '@/components/search.vue'
     import Feed from '@/components/feed.vue'
+    import BtnCreate from '@/components/btncreate.vue';
 
     export default {
         name: 'IndexPage',
@@ -33,6 +30,7 @@
             'Header': Header,
             'Search': Search,
             'Feed': Feed,
+            'BtnCreate': BtnCreate,
         },
         computed: {
             header() {
@@ -48,6 +46,5 @@
 </script>
 
 <style scoped lang="scss">
-    @import '@/assets/scss/components/buttons.scss';
     @import '@/assets/scss/layout/header.scss';
 </style>
