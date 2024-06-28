@@ -2,9 +2,7 @@
     <div id="article-page">
 
         <BtnBack></BtnBack>
-        <Header
-            :class="{'reset': headerReset }">
-        </Header>
+        <Header></Header>
 
         <div class="inner">
 
@@ -36,19 +34,23 @@
         },
         data() {
             return {
+                headerMain: false,
                 headerReset: false,
             }
+        },
+        created() {
+            this.$store.dispatch('header/main', {
+                headerMain: this.headerMain,
+            })
+            this.$store.dispatch('header/reset', {
+                headerReset: this.headerReset,
+            })
         },
         computed: {
             post() {
                 return this.$store.state.posts.mainPosts.find(v => v.id === parseInt(this.$route.params.id, 10));
             },
         },
-        created() {
-            this.$store.dispatch('header/reset', {
-                headerReset: this.headerReset,
-            })
-        }
     }
 </script>
 

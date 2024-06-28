@@ -76,8 +76,11 @@
             },
             resetSearch() {
                 this.$store.dispatch('header/main', {
-                    headerMain: false,
-                });
+                    headerMain: true,
+                })
+                this.$store.dispatch('header/reset', {
+                    headerReset: true,
+                })
 
                 this.$store.dispatch('posts/search', {
                     searched: false,

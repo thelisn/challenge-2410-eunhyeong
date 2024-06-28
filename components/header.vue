@@ -1,7 +1,7 @@
 <template>
     <header 
         id="header"
-        :class="{ 'scrolled': !notScrolled }">
+        :class="{ 'main': main !== false, 'reset': reset === true , 'scrolled': !notScrolled }">
 
         <div class="inner">
             <div class="logo">
@@ -23,6 +23,8 @@
                 notScrolled: true,
                 lastScrollPosition: 0,
                 scrollValue: 0,
+                headerMain: null,
+                headerReset: null,
             }
         },
         mounted() {
@@ -40,6 +42,9 @@
             reset() {
                 return this.$store.state.header.headerReset;
             },
+            main() {
+                return this.$store.state.header.headerMain;
+            }
         },
         methods: {
             clickLogo(event) {

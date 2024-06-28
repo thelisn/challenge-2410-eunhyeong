@@ -2,9 +2,7 @@
     <div id="create">
       
         <BtnBack></BtnBack>
-        <Header
-            :class="{'reset': headerReset }">
-        </Header>
+        <Header></Header>
 
         <div id="create-article">
             <div class="inner">
@@ -61,8 +59,15 @@
                 title: '',
                 date: '',
                 content: '',
-                headerReset: false,
             }
+        },
+        created() {
+            this.$store.dispatch('header/main', {
+                headerMain: false,
+            })
+            this.$store.dispatch('header/reset', {
+                headerReset: false,
+            })
         },
         computed: {
             mainPosts() {
@@ -87,11 +92,6 @@
                 this.$router.push({path: '/post/' + this.mainPosts.length})
             },
         },
-        created() {
-            this.$store.dispatch('header/reset', {
-                headerReset: this.headerReset,
-            })
-        }
     }
 </script>
 

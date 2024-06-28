@@ -98,41 +98,50 @@
                     // 키워드 X 날짜 X
                     alert('검색어를 입력해주세요.');
                     this.$store.dispatch('posts/search', {
-                            searched: false,
-                        });
+                        searched: false,
+                    });
                     return this.mainPosts;
                 } else if ( this.searchData.searchKey.trim() === '' && this.searchData.date1 !== '' && this.searchData.date2 !== '' ) {
                     // 키워드 X 시작날짜 O 종료날짜 O
                     this.$store.dispatch('header/main', {
-                        headerMain: true,
-                    });
+                        headerMain: false,
+                    })
+                    this.$store.dispatch('header/reset', {
+                        headerReset: true,
+                    })
                     return this.searchByDate;
                 } else if ( this.searchData.searchKey.trim() === '' && this.searchData.date1 !== '' && this.searchData.date2 === '' ) {
                     // 키워드 X 시작날짜 O 종료날짜 X
                     alert('종료 날짜를 입력해 주세요.');
                     this.$store.dispatch('posts/search', {
-                            searched: false,
-                        });
+                        searched: false,
+                    });
                     return this.mainPosts;
                 } 
                 else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 === '' && this.searchData.date2 === '' ) {
                     // 키워드 O 시작날짜 X 종료날짜 X
                     this.$store.dispatch('header/main', {
-                        headerMain: true,
-                    });
+                        headerMain: false,
+                    })
+                    this.$store.dispatch('header/reset', {
+                        headerReset: true,
+                    })
                     return this.searchByKeyword;
                 } else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 !== '' && this.searchData.date2 !== '' ) {
                     // 키워드 O 시작날짜 O 종료날짜 O
                     this.$store.dispatch('header/main', {
-                        headerMain: true,
-                    });
+                        headerMain: false,
+                    })
+                    this.$store.dispatch('header/reset', {
+                        headerReset: true,
+                    })
                     return this.searchByAll;
                 } else if ( this.searchData.searchKey.trim() !== '' && this.searchData.date1 !== '' && this.searchData.date2 === '' ) {
                     // 키워드 O 시작날짜 O 종료날짜 X
                     alert('종료 날짜를 입력해 주세요.');
                     this.$store.dispatch('posts/search', {
-                            searched: false,
-                        });
+                        searched: false,
+                    });
                     return this.mainPosts;
                 }
             }

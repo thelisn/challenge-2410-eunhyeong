@@ -1,9 +1,7 @@
 <template>
     <div id="app">
       
-        <Header 
-            :class="{ 'main': !header.headerMain, 'reset': headerReset }">
-        </Header>
+        <Header></Header>
         <Search></Search>
         <Feed></Feed>
 
@@ -20,31 +18,22 @@
 
     export default {
         name: 'IndexPage',
-        data() {
-            return {
-                headerMain: '',
-                headerReset: true,
-            }
-        },
         components: {
             'Header': Header,
             'Search': Search,
             'Feed': Feed,
             'BtnCreate': BtnCreate,
         },
-        computed: {
-            header() {
-                return this.$store.state.header.headerMain;
-            }
-        },
         created() {
-            this.$store.dispatch('header/reset', {
-                headerReset: this.headerReset,
+            this.$store.dispatch('header/main', {
+                headerMain: true,
             })
-        }
+            this.$store.dispatch('header/reset', {
+                headerReset: true,
+            })
+        },
     }
 </script>
 
 <style scoped lang="scss">
-    @import '@/assets/scss/layout/header.scss';
 </style>
