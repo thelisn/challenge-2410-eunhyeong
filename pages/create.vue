@@ -2,7 +2,7 @@
     <div id="create">
       
         <BtnBack></BtnBack>
-        <Header></Header>
+        <Header :main="false" :reset="false"></Header>
 
         <div id="create-article">
             <div class="inner">
@@ -88,5 +88,6 @@
 </script>
 
 <style scoped lang="scss">
+    @import '@/assets/scss/layout/forms.scss';
     @import '@/assets/scss/pages/create.scss';
 </style>

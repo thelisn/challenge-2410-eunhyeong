@@ -9,6 +9,7 @@ export const mutations = {
     },
     searchPost(state, payload) {
         state.isSearched = payload;
+        // console.log(payload.searchKey);
     }
 };
 

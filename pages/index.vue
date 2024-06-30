@@ -1,17 +1,11 @@
 <template>
     <div id="app">
       
-        <Header 
-            class="main">
-        </Header>
-        <Search></Search>
-        <Feed></Feed>
+        <Header :main="this.main" :reset="this.reset"></Header>
+        <Search @main="getMain" @reset="getReset"></Search>
+        <Feed @main="getMain"></Feed>
 
-        <router-link 
-            to="/create" 
-            class="btn-create">
-            글쓰기
-        </router-link>
+        <BtnCreate></BtnCreate>
 
     </div>
 </template>
@@ -20,6 +14,7 @@
     import Header from '@/components/header.vue'
     import Search from '@/components/search.vue'
     import Feed from '@/components/feed.vue'
+    import BtnCreate from '@/components/btncreate.vue';
 
     export default {
         name: 'IndexPage',
@@ -27,15 +22,24 @@
             'Header': Header,
             'Search': Search,
             'Feed': Feed,
+            'BtnCreate': BtnCreate,
         },
-        computed: {
-            isSearched() {
-                return this.$store.state.posts.isSearched.searched;
+        data() {
+            return {
+                main: null,
+                reset: null,
+            }
+        },
+        methods: {
+            getMain(data) {
+                return this.main = data;
+            },
+            getReset(data) {
+                return this.reset = data;
             },
         },
     }
 </script>
 
 <style scoped lang="scss">
-
 </style>

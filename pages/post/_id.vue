@@ -2,7 +2,7 @@
     <div id="article-page">
 
         <BtnBack></BtnBack>
-        <Header></Header>
+        <Header :main="false" :reset="false"></Header>
 
         <div class="inner">
 
@@ -31,6 +31,10 @@
             'Header': Header,
             'Post': Post,
             'BtnBack': BtnBack
+        },
+        data() {
+            return {
+            }
         },
         computed: {
             post() {

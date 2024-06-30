@@ -1,12 +1,18 @@
 <template>
     <header 
-        id="header" 
-        :class="{ 'scrolled': !notScrolled }">
+        id="header"
+        :class="{ 
+            'main': this.main !==false,
+            'reset': this.reset === true,
+            'scrolled': !notScrolled }">
 
         <div class="inner">
-            <router-link to="/" class="logo">
-                <img src="@/assets/img/logo-black.png" v-on:click="clickLogo">
-            </router-link>
+            <div class="logo">
+                <img 
+                    :class="{'reset': this.reset === true }"
+                    v-on:click="clickLogo($event)"
+                    src="@/assets/img/logo-black.png">
+            </div>
         </div>
         
     </header>
@@ -14,6 +20,16 @@
 
 <script>
     export default {
+        props: {
+            main: {
+                type: Boolean,
+                default: true,
+            },
+            reset: {
+                type: Boolean,
+                default: true,
+            }
+        },
         data() {
             return {
                 notScrolled: true,
@@ -33,11 +49,12 @@
             window.removeEventListener('scroll', this.onScroll);
         },
         methods: {
-            clickLogo() {
-                this.$store.dispatch('posts/search', {
-                    searched: false,
-                    searchKey: '',
-                });
+            clickLogo(event) {
+                if(event.target.classList.contains('reset')) {
+                    this.$router.go(this.$router.currentRoute);
+                } else {
+                    this.$router.push({path: '/'});
+                }
             },
             onScroll() {
                 if (window.scrollY < 0) {
@@ -54,5 +71,5 @@
 </script>
 
 <style scoped lang="scss">
-
+    @import '@/assets/scss/layout/header.scss';
 </style>
